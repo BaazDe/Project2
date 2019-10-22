@@ -8,7 +8,6 @@
  *
  * @link     https://github.com/WildCodeSchool/simple-mvc
  */
-
 $routeParts = explode('/', ltrim($_SERVER['REQUEST_URI'], '/') ?: HOME_PAGE);
 $controller = 'App\Controller\\' . ucfirst($routeParts[0] ?? '') . 'Controller';
 $method = $routeParts[1] ?? '';
