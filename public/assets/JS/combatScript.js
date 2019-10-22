@@ -46,4 +46,3 @@ function displayedStats() {
         displayed2 = false;
     }  */
 
-}

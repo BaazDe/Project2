@@ -18,7 +18,6 @@ body{
     background: url("../images/foret.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
 }
 
 
@@ -198,9 +197,14 @@ progress{
     body{
         background-position: center;
     }
+    #menu{
+        display: none;
+    }
+    .menuTop{
+        width: 100vw;
+    }
     .combat{
         width: 100vw;
-        height: 100vh;
        background: transparent;
 
     }
