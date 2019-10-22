@@ -23,5 +23,4 @@ class CombatController extends AbstractController
     {
         return $this->twig->render('Home/combat.html.twig');
     }
-
 }
