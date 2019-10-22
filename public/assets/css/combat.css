@@ -136,3 +136,72 @@ progress{
     width: 239px;
     height: 158px;
 }
+
+@media screen and (max-width: 375px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-position: center;
+    }
+    .combat{
+        width: 100vw;
+        height: 100vh;
+       background: transparent;
+
+    }
+    .combat h5{
+        height: 2em;
+    }
+
+    .combatInterface{
+        height: 100%;
+    }
+
+    .avatar{
+        display: none;
+    }
+
+    .creatureBlock{
+        flex-direction: column;
+        align-items: center;
+        margin: 1em 0;
+    }
+
+    .creatureText{
+        width: 90%;
+    }
+    .combatText{
+        border-radius: 10px;
+    }
+
+    .creatureState{
+        width: 100%;
+    }
+
+    .actions{
+        align-items: center;
+        margin: 0 1em;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 1em 0;
+        border-radius: 20px;
+        width: 90%;
+    }
+
+    .avatarMobile{
+        height: 8em;
+        margin-bottom: 3em;
+    }
+
+    .userBlock{
+        height: 100%;
+    }
+
+    .userState{
+        flex-direction: column;
+        align-items: center;
+    }
+}

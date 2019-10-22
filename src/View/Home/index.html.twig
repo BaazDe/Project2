@@ -1,4 +1,9 @@
-{% extends 'index.html.twig' %}
+{% extends 'layout.html.twig' %}
+ {% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/combat.css">
+ {% endblock %}
+
+
 {% block content %}
 
     {% block combat %}
@@ -18,7 +23,7 @@
                     <!-- image and lifebar -->
                     <div class="creatureState">
                         <img src="assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
-                        <progress id="health" value="40" max="100"></progress>
+                        <progress id="healthCreature" value="40" max="100"></progress>
                     </div>
 
                 </div>
@@ -32,13 +37,19 @@
                             <img src="assets/images/guerrier.gif" alt="userAvatar" class="avatar">
                         </div>
 
+                        <div class="avatarMobile">
+                            <img src="assets/images/guerrier.gif" alt="userAvatar" class="avatarMobile">
+                        </div>
+
                         <div class="actions">
+
                             <div class="actionBtn">
                                 <button>Weapons</button>
                                 <button>Items</button>
                             </div>
 
-                            <progress id="health" value="70" max="100"></progress>
+
+                            <progress id="healthUser" value="70" max="100"></progress>
                         </div>
                     </div>
                 </div>
