@@ -10,10 +10,10 @@ body{
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
+    height: 100vh;
 }
 
 .backgroundImg{
-    height: 100%;
     width: 100%;
 }
 
@@ -24,7 +24,7 @@ body{
 .menuLeft{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 }
@@ -37,11 +37,10 @@ body{
     float: right;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    margin-bottom: 5%;
     color: #FFFFFF;
 }
 
-.menuTopLieu{
+.menuTop p{
     position: relative;
     float: right;
     font-size: 20px;
@@ -49,7 +48,7 @@ body{
     bottom: 10px;
 }
 
-.menuLeftPictures{
+.menuLeftHero{
     display: flex;
     flex-direction: row;
     height: 120px;
@@ -70,7 +69,7 @@ body{
 }
 
 .menuLeftStats p{
-    font-size: 20px;
+    font-size: 1.2vw;
     padding-top: 20px;
     padding-left: 5px;
     display: inline;
@@ -78,7 +77,7 @@ body{
     bottom: 10px;
 }
 
-.menuLeftStatsPictures{
+.menuLeftStatsLogos{
     height: 30px;
     width: 30px;
     padding-top: 15px;
@@ -88,16 +87,16 @@ body{
     height: 40%;
     width: 80%;
     background: rgba(0, 0, 0, 0.51);
-    margin: 30px auto 40px auto;
+    margin: 30px auto 32px auto;
     padding: auto;
     display: flex;
     flex-direction: column;
     align-content: center;
     color: #FFFFFF;
+    font-size: 2vw;
 }
 
 #menuLeftBag p{
-    font-size: 40px;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -117,6 +116,7 @@ body{
     padding: 5px;
     border-radius: 15px;
     color: #FFFFFF;
+    font-size: 1vw;
 }
 
 .menuLeftBagButton:hover{
@@ -130,10 +130,17 @@ body{
 }
 
 #history{
+    padding: 5% 0 10% 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#history p{
     float: right;
     height: 100%;
     width: 70%;
-    margin: 0 auto 5% auto;
+    margin: 0 auto;
     padding: auto;
     font-size: 20px;
     color: #FFFFFF;
@@ -149,14 +156,14 @@ body{
 .response{
     display: flex;
     width: 25%;
-    height: 273px;
+    height: 100px;
     justify-content: space-around;
     background: radial-gradient(70% 70% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    font-size: 30px;
+    font-size: 15px;
     color: #FFFFFF;
 }
 
@@ -164,11 +171,69 @@ body{
     background: radial-gradient(100% 100% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-.restartGame{
-    width: 5%;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    position: absolute;
-    top: 95%;
-    left: 93%;
+@media screen and (max-width: 640px){
+    body{
+        position: relative;
+        z-index: -2;
+        max-width: 100vw;
+        height: 100vh;
+
+    }
+
+    .menuLeftStats, #menuLeftBag{
+        display: none;
+    }
+
+    .menuLeft{
+        background: none;
+        backdrop-filter: none;
+    }
+
+    .menuLeftHero{
+        width: 80px;
+        height: 80px;
+        padding-top: 10px;
+    }
+
+    #corps{
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+    }
+
+    .menuTop p{
+        margin: 0 auto 0 auto;
+        top: 0;
+        font-size: 30px;
+    }
+
+    #history{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        margin: 10% auto 10% auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    #history p{
+        width: 100%;
+        margin: 5%;
+        font-size: 15px;
+    }
+
+    #responses{
+        flex-direction: column;
+    }
+
+    .response{
+        width: 30%;
+        height: 35px;
+        margin: 5px auto;
+        padding: auto;
+
+    }
 }
