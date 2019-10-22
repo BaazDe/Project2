@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: url("https://trello-attachments.s3.amazonaws.com/5da819443d4e4c8a4e48b981/5da81db0f5db7409d3c5a6f3/65e27c8008810066a86ee845c41b1228/path_of_dreams_by_ellysiumn_dcq9cep-fullview.jpg") no-repeat;
+    background-size: cover;
+}
+.home{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    font-family: 'Revalia', cursive;
+}
+
+h1,p{
+    text-align: center;
+}
+h1{
+    margin-top: 20%;
+    margin-bottom: 20%;
+    font-size: 70px;
+}
+p{
+
+    font-size: 25px;
+    color: #FFFFFF;
+}
+button{
+    width: 30%;
+    background: radial-gradient(70% 70% at 50% 50%, rgba(0, 163, 255, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    margin: 20% auto;
+    padding: 15px;
+}
+button p {
+    font-family: 'Revalia', cursive;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 650px) {
+
+    body {
+       background-position: center center;
+    }
+
+    .home{
+        width: 80%;
+    }
+    .home h1{
+        padding-top: 27%;
+        color: #00A3FF;
+        margin-top: 0;
+        margin-bottom: 20%;
+        font-size: 45px;
+    }
+    p{
+        font-size: 24px;
+        color: #FFFFFF;
+    }
+
+    button {
+        width: 30%;
+        margin: 10% auto 0;
+    }
+
+    button p {
+        margin-bottom: 25px;
+        margin-top: 8px;
+    }
+
+}
