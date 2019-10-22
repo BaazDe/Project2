@@ -8,21 +8,20 @@
 
 namespace App\Controller;
 
-class HomeController extends AbstractController
+class CombatController extends AbstractController
 {
 
     /**
-     * Display home page
+     * Display combat page
      *
      * @return string
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
+    public function fight()
     {
-        return $this->twig->render('Home/index.html.twig');
+        return $this->twig->render('Home/combat.html.twig');
     }
-
 
 }

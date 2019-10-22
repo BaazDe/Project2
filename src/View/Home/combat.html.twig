@@ -1,4 +1,9 @@
-{% extends 'index.html.twig' %}
+{% extends 'layout.html.twig' %}
+ {% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/combat.css">
+ {% endblock %}
+
+
 {% block content %}
 
     {% block combat %}
@@ -17,8 +22,8 @@
                     </div>
                     <!-- image and lifebar -->
                     <div class="creatureState">
-                        <img src="assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
-                        <progress id="health" value="40" max="100"></progress>
+                        <img src="../assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
+                        <progress id="healthCreature" value="40" max="100"></progress>
                     </div>
 
                 </div>
@@ -29,16 +34,33 @@
                     <!-- image and lifebar + interaction buttons -->
                     <div class="userState">
                         <div class="avatar">
-                            <img src="assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                        </div>
+
+                        <div class="avatarMobile">
+                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatarMobile">
                         </div>
 
                         <div class="actions">
+
                             <div class="actionBtn">
-                                <button>Weapons</button>
-                                <button>Items</button>
+                                <button id="weaponsDisplayer">Weapons</button>
+                                <button id="itemsDisplayer">Items</button>
+
+                                <!-- combatScript starts -->
+                                <div id="displayedWeapons">
+                                    <button>Axe</button>
+                                    <button>Sword</button>
+                                </div>
+
+                                <div id="displayedItems">
+                                    <button>Potion</button>
+                                    <button>Key</button>
+                                </div>
                             </div>
 
-                            <progress id="health" value="70" max="100"></progress>
+
+                            <progress id="healthUser" value="70" max="100"></progress>
                         </div>
                     </div>
                 </div>
@@ -46,6 +68,8 @@
         </div>
 
 
-    {% endblock %}
+    {% endblock%}
 
 {% endblock content %}
+
+{% block javascript %}<script src="../assets/JS/combatScript.js"></script>{% endblock %}
