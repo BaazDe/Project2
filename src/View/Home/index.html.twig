@@ -44,8 +44,19 @@
                         <div class="actions">
 
                             <div class="actionBtn">
-                                <button>Weapons</button>
-                                <button>Items</button>
+                                <button id="weaponsDisplayer">Weapons</button>
+                                <button id="itemsDisplayer">Items</button>
+
+                                <!-- combatScript starts -->
+                                <div id="displayedWeapons">
+                                    <button>Axe</button>
+                                    <button>Sword</button>
+                                </div>
+
+                                <div id="displayedItems">
+                                    <button>Potion</button>
+                                    <button>Key</button>
+                                </div>
                             </div>
 
 
@@ -57,6 +68,8 @@
         </div>
 
 
-    {% endblock %}
+    {% endblock%}
 
 {% endblock content %}
+
+{% block javascript %}<script src="assets/JS/combatScript.js"></script>{% endblock %}
