@@ -21,6 +21,6 @@ class CombatController extends AbstractController
      */
     public function fight()
     {
-        return $this->twig->render('Home/combat.html.twig');
+        return $this->twig->render('Combat/combat.html.twig');
     }
 }
