@@ -1,0 +1,51 @@
+{% extends '../Home/index.html.twig' %}
+{% block content %}
+
+    {% block combat %}
+        <div class="combat">
+            <h5>Un loup vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
+            <div class="combatInterface">
+
+                <!-- The creature block -->
+                <div class="creatureBlock">
+
+                    <!-- state text during combat -->
+                    <div class="creatureText">
+                        <div class="combatText">
+                            <p>Le loup vous inflige 20 points de dégats</p>
+                        </div>
+                    </div>
+                    <!-- image and lifebar -->
+                    <div class="creatureState">
+                        <img src="assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
+                        <progress id="health" value="40" max="100"></progress>
+                    </div>
+
+                </div>
+
+                <!-- The user block -->
+                <div class="userBlock">
+
+                    <!-- image and lifebar + interaction buttons -->
+                    <div class="userState">
+                        <div class="avatar">
+                            <img src="assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                        </div>
+
+                        <div class="actions">
+                            <div class="actionBtn">
+                                <button>Weapons</button>
+                                <button>Items</button>
+                            </div>
+
+                            <progress id="health" value="70" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+{% endblock content %}
