@@ -66,28 +66,6 @@ main{
 }
 
 @media screen and (max-width: 640px){
-
-    .menuLeftStats, #menuLeftBag{
-        display: none;
-    }
-
-    .menuLeft{
-        background: none;
-        backdrop-filter: none;
-    }
-
-    .menuLeftHero{
-        width: 80px;
-        height: 80px;
-        padding-top: 10px;
-    }
-
-    .menuTop p{
-        margin: 0 auto 0 auto;
-        top: 0;
-        font-size: 30px;
-    }
-
     #history{
         display: flex;
         justify-content: center;
@@ -115,6 +93,5 @@ main{
         height: 35px;
         margin: 5px auto;
         padding: auto;
-
     }
 }
