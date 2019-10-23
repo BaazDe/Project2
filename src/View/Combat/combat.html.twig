@@ -1,0 +1,115 @@
+{% extends 'layout.html.twig' %}
+ {% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/story.css">
+     <link rel="stylesheet" href="/assets/css/combat.css">
+
+ {% endblock %}
+
+
+{% block content %}
+    <div id="menu">
+
+        <div class="menuLeft">
+            <div><img class="menuLeftPictures" src="../assets/images/guerrier.png"></div>
+            <div class="menuLeftStats">
+                <div class="menuLeftPicture"><img class="menuLeftStatsPictures" src="/assets/images/life.png" alt""><p>Health : 80</p></div>
+                <div class="menuLeftPicture"><img class="menuLeftStatsPictures" src="/assets/images/attack.png" alt""><p>Attack : 200</p></div>
+                <div class="menuLeftPicture"><img class="menuLeftStatsPictures" src="/assets/images/gold.png" alt""><p>Gold : 50</p></div>
+            </div>
+            <div id="menuLeftBag">
+                <p>Bag</p>
+                <div class="menuLeftBagButtons">
+                    <button class="menuLeftBagButton" type="button">Wand</button>
+                    <button class="menuLeftBagButton" type="button">Book</button>
+                    <button class="menuLeftBagButton" type="button">Potion</button>
+                    <button class="menuLeftBagButton" type="button">Potion</button>
+                    <button class="menuLeftBagButton" type="button">Spell</button>
+                    <button class="menuLeftBagButton" type="button">Spell</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="corps">
+        <div class="menuTop"><p class="menuTopLieu">Lieu</p></div>
+
+
+        <div class="combat">
+            <h5>Un loup vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
+            <div class="combatInterface">
+
+                <!-- The creature block -->
+                <div class="creatureBlock">
+
+                    <!-- state text during combat -->
+                    <div class="creatureText">
+                        <div class="combatText">
+                            <p>Le loup vous inflige 20 points de dégats</p>
+                        </div>
+                    </div>
+                    <!-- image and lifebar -->
+                    <div class="creatureState">
+                        <img src="../assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
+                        <progress id="healthCreature" value="40" max="100"></progress>
+                    </div>
+
+                </div>
+
+                <!-- The user block -->
+                <div class="userBlock">
+
+                    <!-- image and lifebar + interaction buttons -->
+                    <div class="userState">
+                        <div class="avatar">
+                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                        </div>
+
+                        <div class="avatarMobile">
+                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatarMobile">
+                        </div>
+
+                        <div class="actions">
+
+                            <div class="actionBtn">
+                                <button id="weaponsDisplayer">Weapons</button>
+                                <button id="itemsDisplayer">Items</button>
+
+                                <!-- combatScript starts -->
+                                <div id="displayedWeapons" class="displayedBar">
+                                    <button id="axe">Axe</button>
+                                    <button>Sword</button>
+                                </div>
+
+                                <div id="displayedItems" class="displayedBar">
+                                    <button>Potion</button>
+                                    <button>Key</button>
+                                </div>
+
+                                <div id="weaponStats">
+                                    <span class="itemInBar">Axe</span>
+                                    <img src="../assets/images/sword.png" alt="sword" class="logoStats">
+                                    <span class="statInBar">20</span>
+                                    <button id="attack">Attack</button>
+                                </div>
+
+                            </div>
+
+
+                            <progress id="healthUser" value="70" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<button class="restartGame">Restart</button>-->
+
+    </div>
+
+
+
+
+    <script src="../assets/JS/combatScript.js"></script>
+{% endblock content %}
+
+
