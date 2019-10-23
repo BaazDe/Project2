@@ -9,11 +9,11 @@ body{
     background-size: cover;
     display: flex;
     align-items: flex-start;
-    height: 100vh;
 }
 
 .backgroundImg{
     width: 100%;
+    min-height: 100vh;
 }
 
 #menu{
@@ -23,9 +23,9 @@ body{
 .menuLeft{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    height: 100%;
 }
 
 .menuTop{
@@ -95,7 +95,7 @@ body{
 }
 
 #menuLeftBag p{
-    padding-bottom: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
