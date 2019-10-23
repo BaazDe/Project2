@@ -1,38 +1,9 @@
-{% extends 'layout.html.twig' %}
+{% extends 'interface.html.twig' %}
 {% block stylesheet %}
 <link rel="stylesheet" href="/assets/css/story.css">
 {% endblock %}
 {% block title %}Story{% endblock title %}
-{% block content %}
-
-    <div id="menu">
-
-
-        <div class="menuLeft">
-            <div><img class="menuLeftHero" src="/assets/images/guerrier.png" alt""></div>
-            <div class="menuLeftStats">
-                <div><img class="menuLeftStatsLogos" src="/assets/images/life.png" alt""><p>Health : 80</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/attack.png" alt""><p>Attack : 200</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/gold.png" alt""><p>Gold : 50</p></div>
-            </div>
-            <div id="menuLeftBag">
-                <p>Bag</p>
-                <div class="menuLeftBagButtons">
-                    <button class="menuLeftBagButton" type="button">Wand</button>
-                    <button class="menuLeftBagButton" type="button">Book</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="corps">
-        <div class="menuTop"><p>Lieu</p></div>
-
+{% block main %}
         <div id="history">
         <p>Vous vous réveillez dans une chambre de taverne, la bouche pâteuse, l’esprit embrouillé. La soirée a été compliquée n’est-ce pas ? Dépité, vous vous souvenez que vous avez dépensé toutes vos économies en bière, quel dommage. Un pop sonore provenant de la grande salle vous extirpe de vos pensées. De nature curieuse mais subissant encore vos excès de la veille vous hésitez entre aller voir ce qui se passe ou vous rendormir. Après tout, vous avez payé cette chambre.
         </p>
@@ -46,6 +17,5 @@
 
         <!--<button class="restartGame">Restart</button>-->
 
-    </div>
 {% endblock %}
 

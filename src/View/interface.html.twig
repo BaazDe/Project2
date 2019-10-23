@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+{% endblock %}
+{% block title %}Story{% endblock title %}
+{% block content %}
+    <!-- body -->
+    <div class="content">
+        <nav>
+            <img src="../assets/images/guerrier.png" alt="avatar" class="navAvatar">
+            <ul class="stats">
+                <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health : 100</li>
+                <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack : 200</li>
+                <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold : 0</li>
+            </ul>
+            <div class="bag">
+                <p>Bag</p>
+                <ul>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                    <li>
+                        <button>Item</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="location">
+            <img src="../assets/images/bag.jpg" alt="bagIcon" class="bagIcon">
+            <h4>Lieu</h4>
+        </div>
+
+        <main>
+            <!-- INSERT YOUR CODE HERE -->
+            {% block main %}{% endblock main %}
+        </main>
+    </div>
+    <!-- /body -->
+{% endblock %}
+

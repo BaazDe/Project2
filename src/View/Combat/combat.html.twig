@@ -1,42 +1,11 @@
-{% extends 'layout.html.twig' %}
+{% extends 'interface.html.twig' %}
  {% block stylesheet %}
-     <link rel="stylesheet" href="/assets/css/story.css">
      <link rel="stylesheet" href="/assets/css/combat.css">
-
  {% endblock %}
 
 
-{% block content %}
-    <div id="menu">
-
-
-        <div class="menuLeft">
-            <div><img class="menuLeftHero" src="/assets/images/guerrier.png" alt""></div>
-            <div class="menuLeftStats">
-                <div><img class="menuLeftStatsLogos" src="/assets/images/life.png" alt""><p>Health : 80</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/attack.png" alt""><p>Attack : 200</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/gold.png" alt""><p>Gold : 50</p></div>
-            </div>
-            <div id="menuLeftBag">
-                <p>Bag</p>
-                <div class="menuLeftBagButtons">
-                    <button class="menuLeftBagButton" type="button">Wand</button>
-                    <button class="menuLeftBagButton" type="button">Book</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="corps">
-        <div class="menuTop"><p>Lieu</p></div>
-
-
-        <div class="combat">
+{% block main %}
+            <div class="combat">
             <h5>Un loup vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
             <div class="combatInterface">
 
@@ -103,14 +72,13 @@
                 </div>
             </div>
         </div>
-        <!--<button class="restartGame">Restart</button>-->
-
     </div>
 
 
+        <!--<button class="restartGame">Restart</button>-->
 
 
     <script src="../assets/JS/combatScript.js"></script>
-{% endblock content %}
+{% endblock main %}
 
 
