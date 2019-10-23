@@ -8,7 +8,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-flow: row wrap;
     align-items: flex-start;
     height: 100vh;
 }
@@ -18,7 +17,7 @@ body{
 }
 
 #menu{
-    width: 15%;
+    min-width: 15%;
 }
 
 .menuLeft{
@@ -84,7 +83,6 @@ body{
 }
 
 #menuLeftBag{
-    height: 40%;
     width: 80%;
     background: rgba(0, 0, 0, 0.51);
     margin: 30px auto 32px auto;
@@ -93,7 +91,7 @@ body{
     flex-direction: column;
     align-content: center;
     color: #FFFFFF;
-    font-size: 2vw;
+    font-size: 20px;
 }
 
 #menuLeftBag p{
@@ -116,7 +114,6 @@ body{
     padding: 5px;
     border-radius: 15px;
     color: #FFFFFF;
-    font-size: 1vw;
 }
 
 .menuLeftBagButton:hover{
@@ -235,5 +232,11 @@ body{
         margin: 5px auto;
         padding: auto;
 
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 640px){
+    .menuLeftStats p{
+        font-size: 0.8em;
     }
 }
