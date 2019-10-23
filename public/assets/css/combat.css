@@ -18,6 +18,7 @@ body{
     background: url("../images/foret.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 
@@ -28,9 +29,11 @@ button:hover{
 
 .combat{
     width: 50%;
-    margin: 0 auto;
+    margin: auto;
     background: rgba(0, 0, 0, 0.51);
     padding-bottom: 1em;
+    min-width: 90%;
+    min-height: 40%;
 }
 
 .combat h5{
@@ -68,7 +71,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 2em;
+    margin: 2em;
 }
 
 .creatureText p{
@@ -150,13 +153,8 @@ button:hover{
 }
 
 
-.logoStats{
-    height: 100%;
-}
-.statInBar{
-    color: #000000;
-    font-size: 80%;
-}
+
+
 #attack{
     height: 80%;
     padding-bottom: 5px;
@@ -203,7 +201,7 @@ progress{
     }
     .combat{
         width: 100vw;
-       background: transparent;
+        background: transparent;
 
     }
     .combat h5{
