@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+ {% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/chooseHero.css">
+ {% endblock %}
+
+{% block title %}Choose your hero{% endblock title %}
+
+{% block content %}
+
+
+<h3>Choose your hero</h3>
+
+<div class="cards">
+    <div class="card" id="card-warrior">
+        <h4>Warrior</h4>
+        <ul class="stats" id="stats-warrior">
+            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 130</li>
+            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 150</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
+        </ul>
+        <button class="warrior-btn"><a href="../quest/story">Start</a></button>
+    </div>
+    <div class="card" id="card-mage">
+        <h4>Mage</h4>
+        <ul class="stats" id="stats-mage">
+            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 80</li>
+            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 200</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
+        </ul>
+        <a href=""><button class="mage-btn"><a href="quest/story">Start</a></button>
+    </div>
+    <div class="card" id="card-rogue">
+        <h4>Rogue</h4>
+        <ul class="stats" id="stats-rogue">
+            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 100</li>
+            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 165</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
+        </ul>
+        <a href=""><button class="rogue-btn"><a href="quest/story">Start</a></button>
+    </div>
+</div>
+
+{% endblock %}

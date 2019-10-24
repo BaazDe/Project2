@@ -9,4 +9,10 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Begin/pg-begin.html.twig');
     }
+
+    public function choose()
+    {
+        return $this->twig->render('Begin/chooseHero.html.twig');
+    }
 }
+
