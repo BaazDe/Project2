@@ -5,8 +5,9 @@ namespace App\Controller;
 
 class EnigmaController extends AbstractController
 {
-    public function enigme()
+    public function enigma1()
     {
-        return $this->twig->render('Enigmes/enigme1.html.twig');
+        return $this->twig->render('Enigmas/enigma1.html.twig');
     }
+
 }
