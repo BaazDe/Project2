@@ -1,5 +1,11 @@
 body{
     background-image: url("../images/tavern.jpeg");
+
+}
+
+main{
+    justify-content: space-around;
+>>>>>>> 8406d0b7c02e9393e8149954e873350de29d1ef2
 }
 
 #enigme{
