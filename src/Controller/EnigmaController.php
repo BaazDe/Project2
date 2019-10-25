@@ -9,5 +9,4 @@ class EnigmaController extends AbstractController
     {
         return $this->twig->render('Enigmas/enigma1.html.twig');
     }
-
 }
