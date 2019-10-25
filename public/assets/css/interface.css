@@ -78,7 +78,6 @@ nav{
 }
 
 .bag{
-    background-color: aliceblue;
     width: 80%;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -90,11 +89,13 @@ nav{
     font-size: 2em;
     margin: 0.5em 0;
 }
+
 .bag ul, #bagScript ul{
     display: flex;
     flex-direction: column;
     margin: 0 0 1em 0;
 }
+
 .bag li, #bagScript li{
     list-style: none;
     text-align: center;
