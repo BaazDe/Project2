@@ -1,4 +1,4 @@
-UPDATE EpicWildQuest.choices SET choice = 'Je vais voir ce qu’il se passe.' WHERE id = 1 AND stories_id = 1;
-UPDATE EpicWildQuest.choices SET choice = 'Je préfère me rendormir.' WHERE id = 2 AND stories_id = 1;
-UPDATE EpicWildQuest.choices SET choice = 'Je passe par la forêt.' WHERE id = 3 AND stories_id = 5;
-UPDATE EpicWildQuest.choices SET choice = 'Je passe par le marécage' WHERE id = 4 AND stories_id = 5;
+INSERT INTO EpicWildQuest.choices (id, choice, stories_id) VALUES (1, 'Je vais voir ce qu’il se passe.', 1);
+INSERT INTO EpicWildQuest.choices (id, choice, stories_id) VALUES (2, 'Je préfère me rendormir.', 1);
+INSERT INTO EpicWildQuest.choices (id, choice, stories_id) VALUES (3, 'Je passe par la forêt.', 5);
+INSERT INTO EpicWildQuest.choices (id, choice, stories_id) VALUES (4, 'Je passe par le marécage', 5);
