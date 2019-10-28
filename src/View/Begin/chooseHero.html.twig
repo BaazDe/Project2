@@ -12,8 +12,8 @@
 <h3>Choose your hero</h3>
 
 <div class="cards">
-    <div class="card" id="card-warrior">
-        <h4>Warrior</h4>
+    <div id="card-warrior" class="card" >
+        <h4 id="warrior">Warrior</h4>
         <ul class="stats" id="stats-warrior">
             <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 130</li>
             <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 150</li>
@@ -21,8 +21,8 @@
         </ul>
         <button class="warrior-btn"><a href="../quest/story/1">Start</a></button>
     </div>
-    <div class="card" id="card-mage">
-        <h4>Mage</h4>
+    <div id="card-mage" class="card" >
+        <h4 id="mage">Mage</h4>
         <ul class="stats" id="stats-mage">
             <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 80</li>
             <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 200</li>
@@ -30,8 +30,8 @@
         </ul>
         <a href=""><button class="mage-btn"><a href="../quest/story/1">Start</a></button>
     </div>
-    <div class="card" id="card-rogue">
-        <h4>Rogue</h4>
+    <div id="card-rogue" class="card" >
+        <h4 id="rogue">Rogue</h4>
         <ul class="stats" id="stats-rogue">
             <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 100</li>
             <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 165</li>
@@ -40,5 +40,5 @@
         <a href=""><button class="rogue-btn"><a href="../quest/story/1">Start</a></button>
     </div>
 </div>
-
-{% endblock %}
+    <script src="../assets/JS/chooseHeroScript.js"></script>
+{% endblock content %}

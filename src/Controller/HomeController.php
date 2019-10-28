@@ -15,4 +15,3 @@ class HomeController extends AbstractController
         return $this->twig->render('Begin/chooseHero.html.twig');
     }
 }
-
