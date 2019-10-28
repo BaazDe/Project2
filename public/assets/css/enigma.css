@@ -1,0 +1,60 @@
+body{
+    background-image: url("../images/tavern.jpeg");
+
+}
+
+main{
+    justify-content: space-around;
+}
+
+#enigma{
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    font-family: 'Revalia', cursive;
+}
+
+.element{
+    margin: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.element2{
+    margin: 50px;
+    font-size: 16px;
+    align-self: center;
+}
+
+.clue{
+    border: none;
+    background-color:rgba(129, 126, 126, 0.5);
+    border-radius: 20px;
+    text-align: center;
+}
+.code{
+    text-align: center;
+}
+.code2{
+    text-align: center;
+}
+.answer{
+    border: none;
+    background-color:rgba(129, 126, 126, 0.5);
+    border-radius: 20px;
+    text-align: center;
+}
+.element2 button{
+    color:white;
+    border: none;
+    background-color:rgba(129, 126, 126, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    align-items: flex-end;
+}

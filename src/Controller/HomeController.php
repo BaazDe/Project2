@@ -3,6 +3,8 @@
 
 namespace App\Controller;
 
+use App\Model\HeroesManager;
+
 class HomeController extends AbstractController
 {
     public function index()
@@ -12,7 +14,8 @@ class HomeController extends AbstractController
 
     public function choose()
     {
-        return $this->twig->render('Begin/chooseHero.html.twig');
+        $heroesManager = new HeroesManager();
+        $heroes = $heroesManager->selectAll();
+        return $this->twig->render('Begin/chooseHero.html.twig', ['heroes' => $heroes]);
     }
 }
-

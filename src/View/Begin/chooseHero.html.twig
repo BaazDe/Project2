@@ -8,37 +8,20 @@
 
 {% block content %}
 
-
 <h3>Choose your hero</h3>
 
 <div class="cards">
-    <div class="card" id="card-warrior">
-        <h4>Warrior</h4>
-        <ul class="stats" id="stats-warrior">
-            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 130</li>
-            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 150</li>
-            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
+    {% for heroe in heroes %}
+    <div id="card-{{ heroe.name }}" class="card" >
+        <h4 id="{{ heroe.name }}">{{ heroe.name }}</h4>
+        <ul class="stats" id="stats-{{ heroe.name }}">
+            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: {{heroe.health}}</li>
+            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: {{heroe.attack}}</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: {{ heroe.gold }}</li>
         </ul>
-        <button class="warrior-btn"><a href="../quest/story/1">Start</a></button>
+        <button class="{{ heroe.name }}-btn" id="{{ heroe.name }}-btn"><a href="../quest/1">Start</a></button>
     </div>
-    <div class="card" id="card-mage">
-        <h4>Mage</h4>
-        <ul class="stats" id="stats-mage">
-            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 80</li>
-            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 200</li>
-            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
-        </ul>
-        <a href=""><button class="mage-btn"><a href="../quest/story/1">Start</a></button>
-    </div>
-    <div class="card" id="card-rogue">
-        <h4>Rogue</h4>
-        <ul class="stats" id="stats-rogue">
-            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: 100</li>
-            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: 165</li>
-            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: 0</li>
-        </ul>
-        <a href=""><button class="rogue-btn"><a href="../quest/story/1">Start</a></button>
-    </div>
+    {% endfor %}
 </div>
-
-{% endblock %}
+    <script src="../assets/JS/chooseHeroScript.js"></script>
+{% endblock content %}
