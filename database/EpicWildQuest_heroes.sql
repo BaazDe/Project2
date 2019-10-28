@@ -1,3 +1,3 @@
-UPDATE EpicWildQuest.heroes SET name = 'Warrior', health = 130, attack = 150, gold = 0 WHERE id = 1;
-UPDATE EpicWildQuest.heroes SET name = 'Mage', health = 80, attack = 200, gold = 0 WHERE id = 2;
-UPDATE EpicWildQuest.heroes SET name = 'Rogue', health = 100, attack = 165, gold = 0 WHERE id = 3;
+INSERT INTO EpicWildQuest.heroes (name, health, attack, gold, id) VALUES ('Warrior', 130, 150, 0, 1);
+INSERT INTO EpicWildQuest.heroes (name, health, attack, gold, id) VALUES ('Mage', 80, 200, 0, 2);
+INSERT INTO EpicWildQuest.heroes (name, health, attack, gold, id) VALUES ('Rogue', 100, 165, 0, 3);
