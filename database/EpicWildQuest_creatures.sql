@@ -1,0 +1,2 @@
+INSERT INTO EpicWildQuest.creatures (id, name, health, attack, gold) VALUES (1, 'Wolf', 130, 70, 5);
+INSERT INTO EpicWildQuest.creatures (id, name, health, attack, gold) VALUES (2, 'Frogman', 170, 90, 10);
