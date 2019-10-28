@@ -3,8 +3,14 @@
 
 namespace App\Model;
 
+use App\Controller\AbstractController;
 
-class DeadManager
+class DeadManager extends AbstractController
 {
 
+    const TABLE = 'strories';
+
+    /**
+     *  Initializes this class.
+     */
 }
