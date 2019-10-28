@@ -17,9 +17,10 @@
         <ul class="stats" id="stats-{{ heroe.name }}">
             <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: {{heroe.health}}</li>
             <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: {{heroe.attack}}</li>
-            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: {{ heroe.gold }}</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: {{heroe.gold}}</li>
         </ul>
-        <button class="{{ heroe.name }}-btn" id="{{ heroe.name }}-btn"><a href="../quest/story">Start</a></button>
+
+        <button class="{{ heroe.name }}-btn" id="{{ heroe.name }}-btn"><a href="../quest/story/1">Start</a></button>
 
     </div>
     {% endfor %}
