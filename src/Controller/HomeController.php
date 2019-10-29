@@ -14,7 +14,6 @@ class HomeController extends AbstractController
 
     public function choose()
     {
-
         $heroesManager = new HeroesManager();
         $heroesManager->resetHeroes();
         $heroes = $heroesManager->selectAll();
