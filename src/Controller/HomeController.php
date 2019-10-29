@@ -19,9 +19,4 @@ class HomeController extends AbstractController
         $heroes = $heroesManager->selectAll();
         return $this->twig->render('Begin/chooseHero.html.twig', ['heroes' => $heroes]);
     }
-
-    public function choose()
-    {
-        return $this->twig->render('Home/index.html.twig');
-    }
 }
