@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+body{
+    background-image: url("../images/chateau.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Revalia', cursive;
+}
+.content{
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: 40px auto;
+    grid-template-areas:
+            "aside location"
+            "aside main";
+}
+
+nav {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em 0;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.navAvatar{
+    width: 80%;
+    border-radius: 50%;
+}
+
+.logoStats{
+    height: 2rem;
+}
+
+.stats{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0.5em;
+    border-radius: 15px;
+    font-size: 1em;
+    width: 90%;
+}
+
+.stats li{
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.stats li img{
+    margin-right: 0.3em;
+
+}
+
+#bagScript{
+    position: absolute;
+    background-color: aliceblue;
+    width: 70%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    margin: auto;
+    padding: auto;
+    top: 10%;
+    left: 15%;
+}
+
+.bag{
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+}
+
+.bag p, #bagScript p{
+    text-align: center;
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.bag ul, #bagScript ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em 0;
+}
+
+.bag li, #bagScript li{
+    list-style: none;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.bag li button, #bagScript li button{
+    width: 80%;
+    background: radial-gradient(139.66% 139.66% at 50% 50%, rgba(166, 166, 166, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    height: 2em;
+    color: #FFFFFF;
+}
+
+.location{
+    grid-area: location;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.location h4{
+    color: #FFFFFF;
+    width: 90%;
+}
+
+#bagIcon, #bagScript{
+    display: none;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .content{
+        grid-template-columns: auto;
+        grid-template-rows: 40px auto;
+        grid-template-areas:
+                "location"
+                "main";
+    }
+
+    nav{
+        display: none;
+    }
+
+    #bagIcon{
+        display: block;
+        border-radius: 50%;
+    }
+
+    body{
+        display: flex;
+    }
+}

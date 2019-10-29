@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+ {% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/chooseHero.css">
+ {% endblock %}
+
+{% block title %}Choose your hero{% endblock title %}
+
+{% block content %}
+
+<h3>Choose your hero</h3>
+
+<div class="cards">
+
+    {% for heroe in heroes %}
+    <div id="card-{{ heroe.name }}" class="card" >
+        <h4 id="{{ heroe.name }}">{{ heroe.name }}</h4>
+        <ul class="stats" id="stats-{{ heroe.name }}">
+            <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health: {{heroe.health}}</li>
+            <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack: {{heroe.attack}}</li>
+            <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: {{ heroe.gold }}</li>
+        </ul>
+        <button class="{{ hero.name }}-btn" id="{{ hero.name }}-btn"><a href="../quest/story/1/{{hero.id}}">Start</a></button>
+    </div>
+    {% endfor %}
+</div>
+    <script src="../assets/JS/chooseHeroScript.js"></script>
+{% endblock content %}

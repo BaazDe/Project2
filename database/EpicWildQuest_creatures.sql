@@ -1,0 +1,2 @@
+UPDATE EpicWildQuest.creatures SET name = 'wolf', health = 130, attack = 40, gold = 5 WHERE id = 1;
+UPDATE EpicWildQuest.creatures SET name = 'frogman', health = 170, attack = 50, gold = 10 WHERE id = 2;
