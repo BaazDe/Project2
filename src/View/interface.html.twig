@@ -22,9 +22,19 @@
             <div class="bag">
                 <p>Bag</p>
                 <ul>
+                    {% for hero in heroes %}
+                    {% if path[3] == hero.id %}
+                        {% if weapons is empty %}
+                            {% else %}
+                        {% for weapon in weapons %}
                     <li>
-                        <button>{{ inventory.name }}</button>
+                        <button>{{weapon.name}}</button>
                     </li>
+                        {% endfor %}
+                            {% endif %}
+
+                    {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </nav>
