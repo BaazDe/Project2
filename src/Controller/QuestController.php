@@ -20,16 +20,16 @@ class QuestController extends AbstractController
         return $parts;
     }
 
-    public function story($id, $id_hero)
+    public function story($id, $idHero)
     {
         //calling InventoryManager
         $itemsManager = new InventoryManager();
         //fetch weapons
-        $weapons = $itemsManager->selectWeapons($id_hero);
+        $weapons = $itemsManager->selectWeapons($idHero);
         //fetch spells
-        $spells = $itemsManager->selectSpells($id_hero);
+        $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
-        $potions = $itemsManager->selectPotions($id_hero);
+        $potions = $itemsManager->selectPotions($idHero);
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
