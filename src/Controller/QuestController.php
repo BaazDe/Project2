@@ -40,11 +40,4 @@ class QuestController extends AbstractController
             'path'=>$this->requestPath()
         ]);
     }
-
-
-
-
-
-
-
 }
