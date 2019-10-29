@@ -16,7 +16,6 @@ class HeroesManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
-<<<<<<< HEAD
 
     /**
      * @return string
@@ -29,6 +28,4 @@ class HeroesManager extends AbstractManager
         $statement3 = $this->pdo->exec("UPDATE $this->table SET health = 100, attack = 165, gold = 40 WHERE id = 3");
         return $statement.$statement2.$statement3;
     }
-=======
->>>>>>> 7d47042d1f23f2cef4fbd812f19a394ade58bf77
 }
