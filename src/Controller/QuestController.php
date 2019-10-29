@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
+use App\Model\StoryManager;
+
 class QuestController extends AbstractController
 {
-    public function story()
+    public function story($id)
     {
-        return $this->twig->render('Story/story.html.twig');
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/story.html.twig', ['story' => $story]);
     }
 }
