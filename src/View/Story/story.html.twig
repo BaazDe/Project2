@@ -1,6 +1,10 @@
 {% extends 'interface.html.twig' %}
  {% block stylesheet %}
-     <link rel="stylesheet" href="/assets/css/interface.css">
+     {% for hero in heroes %}
+     {% if path[3] == hero.id %}
+     <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+         {% endif %}
+     {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
  {% endblock %}
 {% block title %}Story{% endblock title %}
@@ -8,18 +12,19 @@
 
     <div id="history">
 
-        <p>{{ story.story }}</p>
+        <p>{{story.story}}</p>
 
     </div>
 
     <div id="responses">
-            <button class="response"><a href="/combat/fight/$id" style="text-decoration: none; color: white"><p>Réponse 1</p></a></button>
-            <button class="response"><a href="../enigma/enigma1" style="text-decoration: none; color: white"><p>Réponse 2</p></a></button>
-            <button class="response"><p>Réponse 3</p></button>
-        </div>
+        <button class="response"><a href="/combat/fight/$id" style="text-decoration: none; color: white"><p>Réponse 1</p></a></button>
+
+        <button class="response"><a href="/enigma/enigma1/$id" style="text-decoration: none; color: white"><p>Réponse 2</p></a></button>
+
+        <button class="response"><p>Réponse 3</p></button>
+    </div>
 
     <!---  bagScript --->
-
     <div id="bagScript">
         <p>Bag</p>
         <ul>
@@ -43,7 +48,7 @@
             </li>
         </ul>
     </div>
-    
+
     <!--<button class="restartGame">Restart</button>-->
 
 
