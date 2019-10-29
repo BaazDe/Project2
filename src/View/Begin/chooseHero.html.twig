@@ -20,7 +20,7 @@
             <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
         </ul>
 
-        <button class="{{ hero.name }}-btn" id="{{ hero.name }}-btn"><a href="../quest/story/1">Start</a></button>
+        <button class="{{ hero.name }}-btn" id="{{ hero.name }}-btn"><a href="../quest/story/{{hero.id}}/1">Start</a></button>
 
     </div>
     {% endfor %}
