@@ -13,6 +13,11 @@ body {
 li{
     list-style: none;
     width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 17px;
 }
 .cards{
     display: flex;
@@ -91,7 +96,7 @@ h4{
     padding: 0.5em;
     border-radius: 15px;
     width: 72%;
-    height: 40%;
+    height: 35%;
     font-size: 13px;
     display: flex;
     flex-direction: column;
@@ -100,6 +105,7 @@ h4{
 }
 .stats img{
     height: 1.5rem;
+    margin-right: 0.5em;
 }
 
 
@@ -131,6 +137,10 @@ h4{
 }
 
 @media screen and (max-width: 640px){
+
+    li{
+        font-size: 20px;
+    }
 
     h3{
         width: 60%;
