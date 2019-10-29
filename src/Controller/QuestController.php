@@ -13,13 +13,8 @@ class QuestController extends AbstractController
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         $scriptName = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $parts = array_diff_assoc($requestUri, $scriptName);
-        if (empty($parts)){
+        if (empty($parts)) {
             return '/';
-        }
-        $path = implode('/', $parts);
-        if (($position = strpos($path, '?')) !== FALSE)
-        {
-            $path = substr($path, 0, $position);
         }
         return $parts;
     }
@@ -30,6 +25,10 @@ class QuestController extends AbstractController
         $heroes = $heroesManager->selectAll();
         $storiesManager = new StoryManager();
         $story = $storiesManager->selectOneById($id);
-        return $this->twig->render('Story/story.html.twig', ['heroes'=>$heroes,'story' => $story, 'path'=>$this->requestPath()]);
+        return $this->twig->render('Story/story.html.twig', [
+            'heroes'=>$heroes,
+            'story' => $story,
+            'path'=>$this->requestPath()
+        ]);
     }
 }
