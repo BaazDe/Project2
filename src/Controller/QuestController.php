@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\ChoiceManager;
 use App\Model\HeroesManager;
 use App\Model\StoryManager;
+use App\Model\InventoryManager;
 
 class QuestController extends AbstractController
 {
@@ -20,8 +21,17 @@ class QuestController extends AbstractController
         return $parts;
     }
 
-    public function story($id)
+    public function story($id, $idHero)
     {
+        //calling InventoryManager
+        $itemsManager = new InventoryManager();
+        //fetch weapons
+        $weapons = $itemsManager->selectWeapons($idHero);
+        //fetch spells
+        $spells = $itemsManager->selectSpells($idHero);
+        //fetch potions
+        $potions = $itemsManager->selectPotions($idHero);
+        //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
         $storiesManager = new StoryManager();
@@ -29,6 +39,9 @@ class QuestController extends AbstractController
         $choicesManager = new ChoiceManager();
         $choices = $choicesManager->selectResponse($id);
         return $this->twig->render('Story/story.html.twig', [
+            'potions' => $potions,
+            'weapons'=>$weapons,
+            'spells'=>$spells,
             'heroes'=>$heroes,
             'story' => $story,
             'choices' => $choices,
