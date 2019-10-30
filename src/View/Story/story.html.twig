@@ -13,9 +13,9 @@
     </div>
 
     <div id="responses">
-        <button class="response"><a href="/combat/fight/$id" style="text-decoration: none; color: white"><p>Réponse 1</p></a></button>
-        <button class="response"><a href="/enigma/enigma1/$id" style="text-decoration: none; color: white"><p>Réponse 2</p></a></button>
-        <button class="response"><p>Réponse 3</p></button>
+        {% for choice in choices %}
+            <a class="response" href="/combat/fight/$id" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+        {% endfor %}
     </div>
 
     <!---  bagScript --->
