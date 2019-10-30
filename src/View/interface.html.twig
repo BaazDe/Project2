@@ -6,14 +6,22 @@
     <!-- body -->
     <div class="content">
         <nav>
-            <img src="../assets/images/guerrier.png" alt="avatar" class="navAvatar">
-            <ul class="stats">
-                <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health : 100</li>
-                <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack : 200</li>
-                <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold : 0</li>
+
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    <img src="/assets/images/{{ hero.name }}.png" alt="avatar" class="navAvatar">
+
+                    <ul class="stats">
+                <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+                <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+                <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
             </ul>
+            {% endif %}
+            {% endfor %}
+
             <div class="bag">
                 <p>Bag</p>
+
                 <ul>
                     <li>
                         <button>Item</button>
