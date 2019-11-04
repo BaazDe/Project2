@@ -1,0 +1,24 @@
+{% extends 'interface.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/enigma.css">
+{% endblock %}
+
+{% block main %}
+    <div id="enigma">
+        <div class="element"><p>{{ enigme.story }}</p></div>
+        <div class="element2">
+            <p class="clue">
+                Indice
+                <br>A -> Z
+                <br>Z -> A
+            </p>
+            <br>
+            <p class="code">Code secret :</p>
+            <br>
+            <p class="code2">ERVMH NV ELRI</p>
+            <br>
+            <p class="answer">Réponse</p>
+            <button type="button">Valider</button>
+        </div>
+{% endblock %}

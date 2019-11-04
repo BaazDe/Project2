@@ -1,24 +1,19 @@
 body{
-    background-image: url("/assets/images/chateau.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    height: 100vh;
+    background-image: url("../images/tavern.jpeg");
+
 }
 
 main{
     justify-content: space-around;
 }
 
-#enigme{
+#enigma{
     margin: 0 auto;
     width: 90%;
     border: none;
-    color:white;
+    color: white;
     border-radius: 20px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     font-family: 'Revalia', cursive;
 }

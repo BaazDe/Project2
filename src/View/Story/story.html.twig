@@ -1,52 +1,54 @@
-{% extends 'layout.html.twig' %}
-{% block stylesheet %}
-<link rel="stylesheet" href="/assets/css/story.css">
-{% endblock %}
+{% extends 'interface.html.twig' %}
+ {% block stylesheet %}
+     {% for hero in heroes %}
+     {% if path[3] == hero.id %}
+     <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+         {% endif %}
+     {% endfor %}
+     <link rel="stylesheet" href="/assets/css/story.css">
+ {% endblock %}
 {% block title %}Story{% endblock title %}
-{% block content %}
+{% block main %}
 
-    <div id="menu">
+    <div id="history">
 
-
-        <div class="menuLeft">
-            <div><img class="menuLeftHero" src="/assets/images/guerrier.png" alt""></div>
-            <div class="menuLeftStats">
-                <div><img class="menuLeftStatsLogos" src="/assets/images/life.png" alt""><p>Health : 80</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/attack.png" alt""><p>Attack : 200</p></div>
-                <div><img class="menuLeftStatsLogos" src="/assets/images/gold.png" alt""><p>Gold : 50</p></div>
-            </div>
-            <div id="menuLeftBag">
-                <p>Bag</p>
-                <div class="menuLeftBagButtons">
-                    <button class="menuLeftBagButton" type="button">Wand</button>
-                    <button class="menuLeftBagButton" type="button">Book</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Potion</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                    <button class="menuLeftBagButton" type="button">Spell</button>
-                </div>
-            </div>
-        </div>
+        <p>{{story.story}}</p>
 
     </div>
 
-    <div id="corps">
-        <div class="menuTop"><p>Lieu</p></div>
-
-        <div id="history">
-        <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus, sed splendore liberalium doctrinarum minus quam nobilem decuerat institutus, quo administrante seditiones sunt concitatae graves ob inopiam vini: huius avidis usibus vulgus intentum ad motus asperos excitatur et crebros.
-            Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
-        </p>
-        </div>
-
-        <div id="responses">
-            <button class="response"><a href="../combat/fight" style="text-decoration: none; color: white"><p>Réponse 1</p></a></button>
-            <button class="response"><p>Réponse 2</p></button>
-            <button class="response"><p>Réponse 3</p></button>
-        </div>
-
-        <!--<button class="restartGame">Restart</button>-->
-
+    <div id="responses">
+        {% for choice in choices %}
+            <a class="response" href="/combat/fight/$id" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+        {% endfor %}
     </div>
+
+    <!---  bagScript --->
+    <div id="bagScript">
+        <p>Bag</p>
+        <ul>
+            <li>
+                <button>Item</button>
+            </li>
+            <li>
+                <button>Item</button>
+            </li>
+            <li>
+                <button>Item</button>
+            </li>
+            <li>
+                <button>Item</button>
+            </li>
+            <li>
+                <button>Item</button>
+            </li>
+            <li>
+                <button>Item</button>
+            </li>
+        </ul>
+    </div>
+
+    <!--<button class="restartGame">Restart</button>-->
+
+
+    <script src="../assets/JS/bagScript.js"></script>
 {% endblock %}
-
