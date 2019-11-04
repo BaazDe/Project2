@@ -25,8 +25,6 @@ class QuestController extends AbstractController
         $heroes = $heroesManager->selectAll();
         $storiesManager = new StoryManager();
         $story = $storiesManager->selectOneById($id);
-        var_dump($story);
-        die();
         return $this->twig->render('Story/story.html.twig', [
             'heroes'=>$heroes,
             'story' => $story,
