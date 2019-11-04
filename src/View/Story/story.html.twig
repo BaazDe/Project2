@@ -12,13 +12,17 @@
 
     <div id="history">
 
-        <p>{{story.story}}</p>
+        <p>{{ story.story }}</p>
 
     </div>
 
     <div id="responses">
+        {% for hero in heroes %}
+        {% if path[3] == hero.id %}
         {% for choice in choices %}
-            <a class="response" href="/quest/story/1/1" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+            <a class="response" href="/quest/story/{{ choice.consequences }}/{{ hero.id }}" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+        {% endfor %}
+        {% endif %}
         {% endfor %}
     </div>
 
