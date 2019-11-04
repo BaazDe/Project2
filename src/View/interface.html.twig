@@ -21,31 +21,25 @@
 
             <div class="bag">
                 <p>Bag</p>
-
                 <ul>
+                    {% for hero in heroes %}
+                    {% if path[3] == hero.id %}
+                        {% if weapons is empty %}
+                            {% else %}
+                        {% for weapon in weapons %}
                     <li>
-                        <button>Item</button>
+                        <button>{{weapon.name}}</button>
                     </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
+                        {% endfor %}
+                            {% endif %}
+
+                    {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </nav>
         <div class="location">
-            <img src="../assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
+            <img src="/assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
             <h4>Lieu</h4>
         </div>
 
