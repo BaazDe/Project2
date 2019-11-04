@@ -1,2 +1,2 @@
-INSERT INTO EpicWildQuest.potions (id, name, regen) VALUES (1, 'life', '20');
-INSERT INTO EpicWildQuest.potions (id, name, regen) VALUES (2, 'drug', '15');
+UPDATE EpicWildQuest.potions SET name = 'life', regen = 20 WHERE id = 1;
+UPDATE EpicWildQuest.potions SET name = 'drug', regen = 15 WHERE id = 2;
