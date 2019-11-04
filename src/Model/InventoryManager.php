@@ -61,24 +61,28 @@ where h.id = :id_hero");
         $this->pdo->query("truncate table inventory");
 
         // prepared request
-        // TODO : Join the tables inventory->weapons->heroes in the following SQL to get the right inventory according to the hero
+        // TODO : Join the tables inventory->weapons->heroes in the following SQL to get the right inventory according
+        // to the hero
         // TODO : Insert items via their names, not their ID
-        switch ($idHero)
-        {
+        switch ($idHero) {
             case 1:
                 // adds axe + 1 potion to warrior
-                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, potions_id) values (1,4,$idHero,1)");
+                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
+                       potions_id) values (1,4,$idHero,1)");
                 break;
             case 2:
                 // adds wand + 1 potion to mage
-                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, potions_id) values (2,4,$idHero,1)");
+                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
+                       potions_id) values (2,4,$idHero,1)");
                 break;
             case 3:
                 // adds dagger + 1 potion to rogue
-                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, potions_id) values (3,4,$idHero,1)");
+                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
+                       potions_id) values (3,4,$idHero,1)");
                 break;
             default:
-                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, potions_id) values (4,4,$idHero,3)");
+                $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
+                       potions_id) values (4,4,$idHero,3)");
                 break;
         }
         $statement->execute();

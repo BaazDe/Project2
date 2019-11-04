@@ -25,8 +25,7 @@ class QuestController extends AbstractController
     {
         //calling InventoryManager
         $itemsManager = new InventoryManager();
-        if ($id == 1)
-        {
+        if ($id == 1) {
             // reset inventory
             $inventoryManager = new InventoryManager();
             $inventoryManager->insertStartingItems($idHero);
