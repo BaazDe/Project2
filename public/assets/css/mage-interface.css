@@ -157,4 +157,13 @@ main{
     body{
         display: flex;
     }
+    .B-Reset {
+        width:85px;
+        height:85px;
+        background:radial-gradient(81.25% 81.25% at 50% 50%, rgba(0, 163, 255, 0.7) 0%, rgba(0, 0, 0, 0.7) 93.23%);
+        font:bold 13px Arial;
+        border-radius:50%;
+        border:none;
+        color:#fff;
+    }
 }
