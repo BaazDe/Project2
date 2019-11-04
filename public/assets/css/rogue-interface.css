@@ -109,6 +109,7 @@ nav {
     border-radius: 15px;
     height: 2em;
     color: #FFFFFF;
+    text-transform: capitalize;
 }
 
 .location{

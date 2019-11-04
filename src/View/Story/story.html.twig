@@ -28,29 +28,24 @@
     <div id="bagScript">
         <p>Bag</p>
         <ul>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    {% if weapons is empty %}
+                    {% else %}
+                        {% for weapon in weapons %}
+                            <li>
+                                <button>{{weapon.name}}</button>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
         </ul>
     </div>
 
     <!--<button class="restartGame">Restart</button>-->
 
 
-    <script src="../assets/JS/bagScript.js"></script>
+    <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
