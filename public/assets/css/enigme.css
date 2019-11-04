@@ -1,8 +1,20 @@
+body{
+    background-image: url("/assets/images/chateau.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+main{
+    justify-content: space-around;
+}
+
 #enigme{
-    margin: 220px;
-    padding: 20px;
-    height: 100%;
-    width: 50%;
+    margin: 0 auto;
+    width: 90%;
     border: none;
     color:white;
     border-radius: 20px;
