@@ -1,5 +1,6 @@
 {% extends 'interface.html.twig' %}
  {% block stylesheet %}
+     {{locations}}
      {% for hero in heroes %}
      {% if path[3] == hero.id %}
      <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
@@ -9,11 +10,12 @@
  {% endblock %}
 {% block title %}Story{% endblock title %}
 {% block main %}
+    {{locations}}
 
     <div id="history">
 
         <p>{{story.story}}</p>
-
+        <h1>{{locations}}</h1>
     </div>
 
     <div id="responses">
@@ -42,6 +44,10 @@
                 {% endif %}
             {% endfor %}
         </ul>
+    </div>
+    <div class="location">
+        <h4>{{locations}}</h4>
+
     </div>
 
     <!--<button class="restartGame">Restart</button>-->
