@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
+
 body {
     background-image: url("/assets/images/chateau.png");
     background-repeat: no-repeat;
@@ -59,6 +61,8 @@ main{
 
 .response p{
     margin: 30px auto auto auto;
+    font-family: 'Revalia', cursive;
+    color: #FFFFFF;
 }
 
 .response:hover{
