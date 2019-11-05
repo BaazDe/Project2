@@ -13,12 +13,10 @@
 
 
 {% block main %}
-
+    <!--display location-->
 
     <div id="history">
-
-        <p>{{ story.story }}</p>
-
+        <p>{{story.story}}</p>
     </div>
 
     <div id="responses">
@@ -91,6 +89,7 @@
             {% endif %}
         {% endfor %}
     </div>
+
     <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
 
