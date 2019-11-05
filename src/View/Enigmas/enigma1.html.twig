@@ -3,11 +3,12 @@
 {% block stylesheet %}
     {% for hero in heroes %}
         {% if path[3] == hero.id %}
-            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
         {% endif %}
     {% endfor %}
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
+
 {% block title %}Story{% endblock title %}
 
 {% block main %}
@@ -18,17 +19,25 @@
             <p class="clue">
                 Indice
                 <br>A -> Z
-                <br>Z -> A
+                <br>Z <- A
             </p>
             <br>
             <p class="code">Code secret :</p>
             <br>
             <p class="code2">ERVMH NV ELRI</p>
             <br>
-            <p class="answer">Réponse</p>
-            <button type="button">Valider</button>
-        </div>
 
+        <form action=" " method= "POST">
+                <label  for="answer"></label>
+                <textarea  id="answer"  placeholder="Réponse" rows="5" cols="50"></textarea>
+                <?= $errors["errorMessage"] ?>
+            <br>
+            <div class="button">
+                <input type="button" value="Valider">
+            </div>
+        </form>
     </div>
     <script src="/assets/JS/bagScript.js"></script>
+
+
 {% endblock %}

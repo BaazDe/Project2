@@ -10,7 +10,6 @@ use App\Model\StoryManager;
 
 class EnigmaController extends AbstractController
 {
-
     public function requestPath()
     {
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
