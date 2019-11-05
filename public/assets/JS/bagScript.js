@@ -20,8 +20,7 @@ function bagScript(){
         responses.style.filter= "blur(5px)";
         responses.style.transitionDuration= "1s";
         displayed = true;
-    }
-    else {
+    } else {
         document.getElementById("bagScript").style.display = "none";
         main.style.background= "none";
         main.style.filter= "none";
