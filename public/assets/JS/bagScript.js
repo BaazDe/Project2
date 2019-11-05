@@ -8,7 +8,7 @@ let displayed = false;
 
 
 bagIcon.addEventListener("click", bagScript);
-function bagScript() {
+function bagScript(){
     if (displayed === false){
         document.getElementById("bagScript").style.display= "block";
         document.getElementById("bagScript").style.transitionDuration= "1s";

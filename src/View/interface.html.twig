@@ -3,13 +3,15 @@
 {% endblock %}
 {% block title %}Story{% endblock title %}
 {% block content %}
+
+
     <!-- body -->
     <div class="content">
         <nav>
 
             {% for hero in heroes %}
                 {% if path[3] == hero.id %}
-                    <img src="/assets/images/{{ hero.name }}.png" alt="avatar" class="navAvatar">
+                    <img src="/assets/images/{{ hero.name | lower }}.png" alt="avatar" class="navAvatar">
 
                     <ul class="stats">
                 <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
@@ -19,39 +21,77 @@
             {% endif %}
             {% endfor %}
 
+            <!---  bagScript --->
             <div class="bag">
                 <p>Bag</p>
+                <form action="" method="post">
                 <ul>
                     {% for hero in heroes %}
-                    {% if path[3] == hero.id %}
-                        {% if weapons is empty %}
+                        {% if path[3] == hero.id %}
+                            <!-- displays weapons -->
+                            {% if weapons is empty %}
                             {% else %}
-                        {% for weapon in weapons %}
-                    <li>
-                        <button>{{weapon.name}}</button>
-                    </li>
-                        {% endfor %}
+                                {% for weapon in weapons %}
+                                    {% if weapon.name is null %}
+                                    {% else %}
+                                    <li>
+                                        <button>{{weapon.name}}</button>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
                             {% endif %}
-
-                    {% endif %}
+                            <!-- end display weapons -->
+                            <!-- displays potions -->
+                            {% if potions is empty %}
+                            {% else %}
+                                {% for potion in potions %}
+                                    {% if potion.name is null %}
+                                    {% else %}
+                                    <li>
+                                        <button onclick="confirm('Utiliser cette potion ?'); location.reload()" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- end display potions -->
+                            <!-- displays spells -->
+                            {% if spells is empty %}
+                            {% else %}
+                                {% for spell in spells %}
+                                    {% if spell.name is null %}
+                                    {% else %}
+                                        <li>
+                                            <button>{{spell.name}}</button>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- end display spells -->
+                        {% endif %}
                     {% endfor %}
                 </ul>
+                </form>
             </div>
         </nav>
         <div class="location">
             <img src="/assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
             <h4>Lieu</h4>
+
+                <button class="restartGame" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
+
         </div>
 
         <main id="main">
             <!-- INSERT YOUR CODE HERE -->
             {% block main %}
-
+                <form>
+                    <input classe="B-Reset"  type="button" value="Give Up">
+                </form>
             {% endblock main %}
         </main>
     </div>
     <!-- /body -->
     <script src="/assets/JS/combatScript.js"></script>
+    <script src="/assets/JS/itemsManagement.js"></script>
 
 {% endblock %}
-

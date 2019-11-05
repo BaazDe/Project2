@@ -1,15 +1,19 @@
 {% extends 'interface.html.twig' %}
 
 {% block stylesheet %}
+    {% for hero in heroes %}
+        {% if path[3] == hero.id %}
+            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        {% endif %}
+    {% endfor %}
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
+{% block title %}Story{% endblock title %}
 
 {% block main %}
+ <!-- TODO : form heading to next story if enigma is solved -->
     <div id="enigma">
-        <div class="element"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p></div>
+        <div class="element"><p>{{ enigma.story }}</p></div>
         <div class="element2">
             <p class="clue">
                 Indice
@@ -24,4 +28,7 @@
             <p class="answer">Réponse</p>
             <button type="button">Valider</button>
         </div>
+
+    </div>
+    <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
