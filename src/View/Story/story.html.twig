@@ -23,7 +23,7 @@
         {% for hero in heroes %}
         {% if path[3] == hero.id %}
         {% for choice in choices %}
-            <a class="response" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+            <a class="response" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}"><p>{{ choice.choice }}</p></a>
         {% endfor %}
         {% endif %}
         {% endfor %}
@@ -31,31 +31,35 @@
 
     <!---  bagScript --->
     <div id="bagScript">
+
         <p>Bag</p>
         <ul>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    {% if weapons is empty %}
+                    {% else %}
+                        {% for weapon in weapons %}
+                            <li>
+                                <button>{{weapon.name}}</button>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
         </ul>
+
+    {% for hero in heroes %}
+    {% if path[3] == hero.id %}
+    <ul id="statsScript">
+        <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+        <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+        <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
+    </ul>
+    {% endif %}
+    {% endfor %}
+
     </div>
-
-    <!--<button class="restartGame">Restart</button>-->
-
 
     <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
