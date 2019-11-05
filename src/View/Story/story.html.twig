@@ -22,27 +22,57 @@
         {% endfor %}
     </div>
 
-
-    <!---  bagScript --->
+    <!---  bagScript showing in mobile --->
     <div id="bagScript">
         <p>Bag</p>
-        <ul>
-            {% for hero in heroes %}
-                {% if path[3] == hero.id %}
-                    {% if weapons is empty %}
-                    {% else %}
-                        {% for weapon in weapons %}
-                            <li>
-                                  <button >{{weapon.name}}</button>
-                            </li>
-                        {% endfor %}
+        <form action="" method="post">
+            <ul>
+                {% for hero in heroes %}
+                    {% if path[3] == hero.id %}
+                        <!-- displays weapons -->
+                        {% if weapons is empty %}
+                        {% else %}
+                            {% for weapon in weapons %}
+                                {% if weapon.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button>{{weapon.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display weapons -->
+                        <!-- displays potions -->
+                        {% if potions is empty %}
+                        {% else %}
+                            {% for potion in potions %}
+                                {% if potion.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button onclick="confirm('Utiliser cette potion ?'); setTimeout(500); location.reload()" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display potions -->
+                        <!-- displays spells -->
+                        {% if spells is empty %}
+                        {% else %}
+                            {% for spell in spells %}
+                                {% if spell.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button>{{spell.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display spells -->
                     {% endif %}
-
-                {% endif %}
-            {% endfor %}
-        </ul>
+                {% endfor %}
+            </ul>
+        </form>
     </div>
-
 
     <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}

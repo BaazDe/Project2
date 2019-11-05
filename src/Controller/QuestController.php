@@ -25,12 +25,21 @@ class QuestController extends AbstractController
     {
         //calling InventoryManager
         $itemsManager = new InventoryManager();
+        if ($id == 1) {
+            // reset inventory
+            $inventoryManager = new InventoryManager();
+            $inventoryManager->insertStartingItems($idHero);
+        }
         //fetch weapons
         $weapons = $itemsManager->selectWeapons($idHero);
         //fetch spells
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
+        if (isset($_POST['potion'])) {
+            $itemsManager->usePotion();
+        }
+
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
