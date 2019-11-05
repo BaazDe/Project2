@@ -42,11 +42,11 @@ class EnigmaController extends AbstractController
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
         //display locations
-       $locationId = $story['locations_id'];
-       $locationsManager = new LocationManager();
-       $location=$locationsManager->selectOneById($locationId);
-       $location=$location['name'];
-       return $this->twig->render('Enigmas/enigma1.html.twig', [
+        $locationId = $story['locations_id'];
+        $locationsManager = new LocationManager();
+        $location=$locationsManager->selectOneById($locationId);
+         $location=$location['name'];
+        return $this->twig->render('Enigmas/enigma1.html.twig', [
            'potions' => $potions,
            'weapons'=>$weapons,
            'spells'=>$spells,
