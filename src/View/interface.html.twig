@@ -22,6 +22,7 @@
             <!---  bagScript --->
             <div class="bag">
                 <p>Bag</p>
+                <form action="" method="post">
                 <ul>
                     {% for hero in heroes %}
                         {% if path[3] == hero.id %}
@@ -45,7 +46,7 @@
                                     {% if potion.name is null %}
                                     {% else %}
                                     <li>
-                                        <button>{{potion.name}}</button>
+                                        <button onclick="confirm('Utiliser cette potion ?'); location.reload()" type="submit" name="{{potion.name}}">{{potion.name}}</button>
                                     </li>
                                     {% endif %}
                                 {% endfor %}
@@ -67,6 +68,7 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                </form>
             </div>
         </nav>
         <div class="location">
@@ -83,6 +85,7 @@
     </div>
     <!-- /body -->
     <script src="/assets/JS/combatScript.js"></script>
+    <script src="/assets/JS/itemsManagement.js"></script>
 
 {% endblock %}
 

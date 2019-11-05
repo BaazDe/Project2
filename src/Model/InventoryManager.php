@@ -3,6 +3,8 @@
 
 namespace App\Model;
 
+use PDO;
+
 class InventoryManager extends AbstractManager
 {
 
@@ -68,23 +70,30 @@ where h.id = :id_hero");
             case 1:
                 // adds axe + 1 potion to warrior
                 $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
-                       potions_id) values (1,4,$idHero,1)");
+                       potions_id) values (1,4,$idHero,4), (6,4,$idHero,1)");
                 break;
             case 2:
                 // adds wand + 1 potion to mage
                 $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
-                       potions_id) values (2,4,$idHero,1)");
+                       potions_id) values (2,4,$idHero,4), (6,4,$idHero,1)");
                 break;
             case 3:
                 // adds dagger + 1 potion to rogue
                 $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
-                       potions_id) values (3,4,$idHero,1)");
+                       potions_id) values (3,4,$idHero,4), (6,4,$idHero,1)");
                 break;
             default:
                 $statement = $this->pdo->prepare("insert into inventory (weapons_id, spells_id, heroes_id, 
-                       potions_id) values (4,4,$idHero,3)");
+                       potions_id) values (4,4,$idHero,4), (6,4,$idHero,1)");
                 break;
         }
+        $statement->execute();
+    }
+
+    public function usePotion()
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE potions_id=1 limit 1");
         $statement->execute();
     }
 }
