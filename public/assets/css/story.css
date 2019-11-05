@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
+
 body {
     background-image: url("/assets/images/chateau.png");
     background-repeat: no-repeat;
@@ -53,6 +55,7 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 15px;
     font-size: 15px;
+    font-family: 'Revalia', cursive;
     color: #FFFFFF;
 }
 
