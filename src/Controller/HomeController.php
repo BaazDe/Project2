@@ -10,7 +10,7 @@ class HomeController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('Begin/pg-begin.html.twig');
+        return $this->twig->render('Begin/begin.html.twig');
     }
 
     public function choose()
