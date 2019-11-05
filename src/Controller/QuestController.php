@@ -36,7 +36,7 @@ class QuestController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-        if(isset($_POST['potion'])) {
+        if (isset($_POST['potion'])) {
             $itemsManager->usePotion();
         }
 
