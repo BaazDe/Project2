@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Model\EnigmasManager;
 use App\Model\HeroesManager;
 use App\Model\InventoryManager;
+use App\Model\LocationManager;
 use App\Model\StoryManager;
 
 class EnigmaController extends AbstractController
@@ -41,6 +42,13 @@ class EnigmaController extends AbstractController
         $story = $storiesManager->selectOneById($id);
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
+
+         //display locations
+
+        $locationId = $story['locations_id'];
+        $locationsManager = new LocationManager();
+        $location=$locationsManager->selectOneById($locationId);
+        $location=$location['name'];
         return $this->twig->render('Enigmas/enigma1.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -48,6 +56,7 @@ class EnigmaController extends AbstractController
             'story' => $story,
             'enigma' => $enigma,
             'heroes'=>$heroes,
+            'locations' =>$location,
             'path'=>$this->requestPath()
         ]);
     }
