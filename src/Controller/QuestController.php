@@ -52,8 +52,8 @@ class QuestController extends AbstractController
         //display locations
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
-        $location=$locationsManager->selectOneById($locationId);
-        $location=$location['name'];
+        $locations=$locationsManager->selectOneById($locationId);
+        $locations=$locations['name'];
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -61,7 +61,7 @@ class QuestController extends AbstractController
             'heroes'=>$heroes,
             'story' => $story,
             'choices' => $choices,
-            'locations' =>$location,
+            'locations' =>$locations,
             'path'=>$this->requestPath()
         ]);
     }
