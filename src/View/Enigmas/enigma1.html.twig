@@ -12,8 +12,9 @@
 {% block title %}Story{% endblock title %}
 
 {% block main %}
+ <!-- TODO : form heading to next story if enigma is solved -->
     <div id="enigma">
-        <div class="element"><p>{{ enigme.story }}</p></div>
+        <div class="element"><p>{{ enigma.story }}</p></div>
         <div class="element2">
             <p class="clue">
                 Indice
@@ -25,6 +26,7 @@
             <br>
             <p class="code2">ERVMH NV ELRI</p>
             <br>
+
         <form action=" " method= "POST">
             <label  for="answer"></label>
             <textarea  id="answer"  placeholder="Réponse"></textarea>
@@ -35,4 +37,6 @@
         </div>
     </div>
     <script src="/assets/JS/bagScript.js"></script>
+
+
 {% endblock %}
