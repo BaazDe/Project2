@@ -1,19 +1,11 @@
 <?php
 
-
 namespace App\Model;
 
 class InventoryManager extends AbstractManager
 {
-
-    /**
-     *
-     */
     const TABLE = 'inventory';
 
-    /**
-     *  Initializes this class.
-     */
     public function __construct()
     {
         parent::__construct(self::TABLE);

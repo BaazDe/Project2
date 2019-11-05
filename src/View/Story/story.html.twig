@@ -2,7 +2,7 @@
  {% block stylesheet %}
      {% for hero in heroes %}
      {% if path[3] == hero.id %}
-     <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+     <link rel="stylesheet" href="/assets/css/{{ hero.name  }}-interface.css">
          {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
@@ -22,6 +22,7 @@
         {% endfor %}
     </div>
 
+
     <!---  bagScript --->
     <div id="bagScript">
         <p>Bag</p>
@@ -32,7 +33,7 @@
                     {% else %}
                         {% for weapon in weapons %}
                             <li>
-                                <button>{{weapon.name}}</button>
+                                  <button >{{weapon.name}}</button>
                             </li>
                         {% endfor %}
                     {% endif %}
@@ -41,8 +42,6 @@
             {% endfor %}
         </ul>
     </div>
-
-    <!--<button class="restartGame">Restart</button>-->
 
 
     <script src="/assets/JS/bagScript.js"></script>

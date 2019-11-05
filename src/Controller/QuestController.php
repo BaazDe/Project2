@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Model\ChoiceManager;
 use App\Model\HeroesManager;
-use App\Model\StoryManager;
 use App\Model\InventoryManager;
+use App\Model\StoryManager;
 
 class QuestController extends AbstractController
 {

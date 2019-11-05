@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
-
-body {
-    background-image: url("/assets/images/chateau.png");
+body{
+    background-image: url("/assets/images/dead.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
 
-main{
-    justify-content: space-around;
+h2{
+    margin-top: 10%;
+    color: #BF0000;
+    font-size: 400%;
+    text-align: center;
 }
 
-.backgroundImg{
-    width: 100%;
+p{
+    color: #FFFFFF;
+    font-size: 100%;
 }
-
 #history{
     width: 70%;
     display: flex;
@@ -33,8 +34,8 @@ main{
     padding: auto;
     width: 70%;
     margin: 1em auto;
-    font-size: 1em;
     color: #FFFFFF;
+    font-size: 130%;
 }
 
 #responses{
@@ -46,8 +47,8 @@ main{
 
 .response{
     display: flex;
-    width: 25%;
-    height: 100px;
+    width: 10%;
+    height: 30%;
     justify-content: space-around;
     background: radial-gradient(70% 70% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
     border: 1px solid #FFFFFF;
@@ -55,15 +56,19 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 15px;
     font-size: 15px;
-    font-family: 'Revalia', cursive;
     color: #FFFFFF;
+    margin-top: 1%;
 }
 
 .response:hover{
     background: radial-gradient(100% 100% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
+
+    body{
+    background-position: center;
+}
     #history{
         display: flex;
         justify-content: space-around;
@@ -75,6 +80,7 @@ main{
         text-align: center;
         padding: 0;
     }
+
 
     #history p{
         width: 100%;
@@ -90,6 +96,6 @@ main{
         width: 30%;
         height: 35px;
         margin: 5px auto;
-        padding: auto;
+
     }
 }
