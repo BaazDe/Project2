@@ -11,6 +11,7 @@
 <h3>Choose your hero</h3>
 
 <div class="cards">
+
     {% for hero in heroes %}
     <div id="card-{{ hero.name }}" class="card" >
         <h4 id="{{ hero.name }}">{{ hero.name }}</h4>
