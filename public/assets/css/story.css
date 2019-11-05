@@ -84,22 +84,16 @@ main{
         flex-direction: column;
     }
     .response{
-<<<<<<< HEAD
-        width: 70%;
-        height: 35px;
-=======
+
         min-width: 200px;
         height: 50px;
->>>>>>> ebc680b939434b2908eafb7539ae7d448c0dfdf6
         margin: 5px auto;
         padding: 0.3em;
     }
-<<<<<<< HEAD
-}
-=======
+
 
     .response p{
         margin: auto;
     }
 }
->>>>>>> ebc680b939434b2908eafb7539ae7d448c0dfdf6
+
