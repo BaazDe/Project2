@@ -1,8 +1,14 @@
 {% extends 'interface.html.twig' %}
 
 {% block stylesheet %}
+    {% for hero in heroes %}
+        {% if path[3] == hero.id %}
+            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        {% endif %}
+    {% endfor %}
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
+{% block title %}Story{% endblock title %}
 
 {% block main %}
     <div id="enigma">
@@ -21,4 +27,6 @@
             <p class="answer">Réponse</p>
             <button type="button">Valider</button>
         </div>
+    </div>
+    <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}

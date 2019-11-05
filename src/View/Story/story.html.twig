@@ -1,13 +1,16 @@
 {% extends 'interface.html.twig' %}
+
  {% block stylesheet %}
      {% for hero in heroes %}
-     {% if path[3] == hero.id %}
-     <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
-         {% endif %}
+        {% if path[3] == hero.id %}
+            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
  {% endblock %}
 {% block title %}Story{% endblock title %}
+
+
 {% block main %}
 
     <div id="history">
@@ -20,7 +23,7 @@
         {% for hero in heroes %}
         {% if path[3] == hero.id %}
         {% for choice in choices %}
-            <a class="response" href="/quest/story/{{ choice.consequences }}/{{ hero.id }}" style="text-decoration: none; color: white">{{ choice.choice }}</a>
+            <a class="response" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}" style="text-decoration: none; color: white">{{ choice.choice }}</a>
         {% endfor %}
         {% endif %}
         {% endfor %}
@@ -54,5 +57,5 @@
     <!--<button class="restartGame">Restart</button>-->
 
 
-    <script src="../assets/JS/bagScript.js"></script>
+    <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
