@@ -20,6 +20,7 @@ main {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    flex-direction: row;
 }
 
 .element{
@@ -71,7 +72,7 @@ input{
     width: 100%;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 800px){
     *{
         margin: 0;
         padding: 0;
@@ -90,7 +91,8 @@ input{
 
     .element2{
         margin: auto;
-        width: 40%;
+        padding: 1em;
+        width: 100%;
     }
 
     .clue {
