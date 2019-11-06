@@ -37,6 +37,8 @@ class QuestController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
+
+        //TODO: bug -> if click confirm is false, function is still running
         if (isset($_POST['potion'])) {
             $itemsManager->usePotion();
         }

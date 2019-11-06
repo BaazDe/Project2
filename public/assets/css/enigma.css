@@ -89,7 +89,8 @@ input{
 
     .element2{
         margin: auto;
-        width: 40%;
+        padding: 1em;
+        width: 100%;
     }
 
     .clue {
