@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
 
 body {
-    background-image: url("/assets/images/chateau.png");
+    /*background-image: url("/assets/images/chateau.png");*/
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
-
 main{
     justify-content: space-around;
 }
-
 .backgroundImg{
     width: 100%;
 }
-
 #history{
     width: 70%;
     display: flex;
@@ -26,7 +23,6 @@ main{
     margin: 0 auto;
     padding: 3%;
 }
-
 #history p{
     float: right;
     height: 100%;
@@ -36,35 +32,37 @@ main{
     font-size: 1em;
     color: #FFFFFF;
 }
-
 #responses{
     display: flex;
     width: 100%;
     float: right;
     justify-content: space-around;
 }
-
 .response{
+    text-decoration: none;
+    color: #FFFFFF;
     display: flex;
     width: 25%;
     height: 100px;
-    justify-content: space-around;
     background: radial-gradient(70% 70% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
     border-radius: 15px;
     font-size: 15px;
+    text-align: center;
+}
+
+.response p{
+    margin: 30px auto auto auto;
     font-family: 'Revalia', cursive;
     color: #FFFFFF;
     align-items: center;
     text-align: center;
 }
-
 .response:hover{
     background: radial-gradient(100% 100% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
-
 @media screen and (max-width: 640px){
     #history{
         display: flex;
@@ -77,21 +75,25 @@ main{
         text-align: center;
         padding: 0;
     }
-
     #history p{
         width: 100%;
         margin: 5%;
         font-size: 15px;
     }
-
     #responses{
         flex-direction: column;
     }
-
     .response{
-        width: 70%;
-        height: 35px;
+
+        min-width: 200px;
+        height: 50px;
         margin: 5px auto;
         padding: 0.3em;
     }
+
+
+    .response p{
+        margin: auto;
+    }
 }
+

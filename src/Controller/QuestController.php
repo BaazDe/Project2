@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\ChoiceManager;
 use App\Model\HeroesManager;
+use App\Model\LocationManager;
 use App\Model\InventoryManager;
 use App\Model\StoryManager;
 
@@ -47,6 +48,12 @@ class QuestController extends AbstractController
         $story = $storiesManager->selectOneById($id);
         $choicesManager = new ChoiceManager();
         $choices = $choicesManager->selectResponse($id);
+
+        //display locations
+        $locationId = $story['locations_id'];
+        $locationsManager = new LocationManager();
+        $location=$locationsManager->selectOneById($locationId);
+        $location=$location['name'];
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -54,6 +61,7 @@ class QuestController extends AbstractController
             'heroes'=>$heroes,
             'story' => $story,
             'choices' => $choices,
+            'locations' =>$location,
             'path'=>$this->requestPath()
         ]);
     }
