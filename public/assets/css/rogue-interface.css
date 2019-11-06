@@ -11,7 +11,7 @@ button:hover{
 }
 
 body{
-    background-image: url("../images/chateau.png");
+    background-image: url("../images/tavern.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Revalia', cursive;
@@ -77,6 +77,11 @@ nav {
     left: 15%;
 }
 
+#statsScript{
+    margin-top: 25px;
+    border-top: 1px solid white;
+}
+
 .bag{
     width: 80%;
     border-radius: 20px;
@@ -128,7 +133,7 @@ nav {
     margin-top: 0.5%;
 }
 
-#bagIcon, #bagScript{
+#bagIcon, #bagScript, #statsScript{
     display: none;
 }
 
@@ -148,7 +153,6 @@ main{
     font-size: 15px;
     font-family: 'Revalia', cursive;
     color: #FFFFFF;
-    width: 10%;
     height: 30px;
     margin: 5px auto;
     padding: 0.3em;

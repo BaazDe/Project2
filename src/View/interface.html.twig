@@ -8,11 +8,9 @@
     <!-- body -->
     <div class="content">
         <nav>
-
             {% for hero in heroes %}
                 {% if path[3] == hero.id %}
                     <img src="/assets/images/{{ hero.name | lower }}.png" alt="avatar" class="navAvatar">
-
                     <ul class="stats">
                 <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
                 <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
@@ -76,10 +74,7 @@
         <div class="location">
             <img src="/assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
             <h4>{{ locations }}</h4>
-
                 <button class="restartGame" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
-
-
         </div>
 
         <main id="main">

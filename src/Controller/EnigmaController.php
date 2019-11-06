@@ -11,7 +11,6 @@ use App\Model\StoryManager;
 
 class EnigmaController extends AbstractController
 {
-
     public function requestPath()
     {
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
@@ -42,8 +41,6 @@ class EnigmaController extends AbstractController
         $story = $storiesManager->selectOneById($id);
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
-
-         //display locations
 
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
