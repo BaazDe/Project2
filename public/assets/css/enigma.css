@@ -11,7 +11,6 @@ main {
 }
 
 #enigma{
-
     font-family: 'Revalia', cursive;
     margin: 5%;
     width: 90%;
@@ -23,7 +22,6 @@ main {
 }
 
 .element{
-
     font-size: 20px;
     text-align: center;
     margin: auto;
