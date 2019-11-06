@@ -170,6 +170,7 @@ main{
 
 .reset{
     margin-bottom: 15%;
+    padding: 0 10px;
 }
 @media screen and (max-width: 800px){
     .content{
