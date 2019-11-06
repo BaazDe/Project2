@@ -56,7 +56,7 @@
                                 {% if potion.name is null %}
                                 {% else %}
                                     <li>
-                                        <button onclick="confirm('Utiliser cette potion ?'); setTimeout(500); location.reload()" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.reload();}" type="submit"  name="{{potion.name}}">{{potion.name}}</button>
                                     </li>
                                 {% endif %}
                             {% endfor %}
