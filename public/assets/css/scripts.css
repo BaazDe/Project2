@@ -1,3 +1,5 @@
+/*----- Afficher Bag Responsive -------------------------*/
+
 #bagScript.script{
     display: block;
     transition-duration: 1s;
@@ -17,5 +19,31 @@ main.script{
 }
 
 #itemsDisplayer.displayN, #displayedItems.displayN, #weaponsDisplayer.displayN{
+    display: none;
+}
+
+/*----- Choose Hero -------------------------------------*/
+
+#card-warrior.displayWarrior, #card-mage.displayMage, #card-rogue.displayRogue{
+    height: 60%;
+}
+
+#stats-warrior.displayWarrior, #stats-mage.displayMage, #stats-rogue.displayRogue{
+    display: flex;
+}
+
+#warrior-btn.displayWarrior, #mage-btn.displayMage, #rogue-btn.displayRogue{
+    display: block;
+}
+
+#card-warrior.resetWarrior, #card-mage.resetMage, #card-rogue.resetRogue{
+    height: calc(100%/7);
+}
+
+#stats-warrior.resetWarrior, #stats-mage.resetMage, #stats-rogue.resetRogue{
+    display: none;
+}
+
+#warrior-btn.resetWarrior, #mage-btn.resetMage, #rogue-btn.resetRogue{
     display: none;
 }
