@@ -1,49 +1,97 @@
 {% extends 'interface.html.twig' %}
+
  {% block stylesheet %}
-     <link rel="stylesheet" href="/assets/css/interface.css">
+     {% for hero in heroes %}
+
+        {% if path[3] == hero.id %}
+            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        {% endif %}
+     {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
  {% endblock %}
 {% block title %}Story{% endblock title %}
+
+
 {% block main %}
-        <div id="history">
-        <p>Vous vous réveillez dans une chambre de taverne, la bouche pâteuse, l’esprit embrouillé. La soirée a été compliquée n’est-ce pas ? Dépité, vous vous souvenez que vous avez dépensé toutes vos économies en bière, quel dommage. Un pop sonore provenant de la grande salle vous extirpe de vos pensées. De nature curieuse mais subissant encore vos excès de la veille vous hésitez entre aller voir ce qui se passe ou vous rendormir. Après tout, vous avez payé cette chambre.
-        </p>
 
-        </div>
-        <div id="responses">
-            <button class="response"><a href="../combat/fight" style="text-decoration: none; color: white"><p>Réponse 1</p></a></button>
-            <button class="response"><a href="../enigma/enigma1" style="text-decoration: none; color: white"><p>Réponse 2</p></a></button>
-            <button class="response"><p>Réponse 3</p></button>
-        </div>
+    <!--display location-->
 
-    <!---  bagScript --->
+    <div id="history">
+        <p>{{story.story}}</p>
+    </div>
 
+    <div id="responses">
+        {% for hero in heroes %}
+        {% if path[3] == hero.id %}
+        {% for choice in choices %}
+            <a class="response" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}"><p>{{ choice.choice }}</p></a>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <!---  bagScript showing in mobile --->
     <div id="bagScript">
         <p>Bag</p>
         <ul>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
-            <li>
-                <button>Item</button>
-            </li>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    <!-- displays weapons -->
+                    {% if weapons is empty %}
+                    {% else %}
+                        {% for weapon in weapons %}
+                            {% if weapon.name is null %}
+                            {% else %}
+                                <li>
+                                    <button>{{weapon.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <!-- end display weapons -->
+                    <!-- displays potions -->
+                    {% if potions is empty %}
+                    {% else %}
+                        {% for potion in potions %}
+                            {% if potion.name is null %}
+                            {% else %}
+                                <li>
+                                    <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <!-- end display potions -->
+                    <!-- displays spells -->
+                    {% if spells is empty %}
+                    {% else %}
+                        {% for spell in spells %}
+                            {% if spell.name is null %}
+                            {% else %}
+                                <li>
+                                    <button>{{spell.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <!-- end display spells -->
+                {% endif %}
+            {% endfor %}
         </ul>
+        {% for hero in heroes %}
+            {% if path[3] == hero.id %}
+                <ul id="statsScript">
+                    <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+                    <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+                    <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+
+
     </div>
-    
-    <!--<button class="restartGame">Restart</button>-->
 
 
-    <script src="../assets/JS/bagScript.js"></script>
+    <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}
+

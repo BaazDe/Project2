@@ -3,53 +3,89 @@
 {% endblock %}
 {% block title %}Story{% endblock title %}
 {% block content %}
+
+
     <!-- body -->
     <div class="content">
         <nav>
-            <img src="../assets/images/guerrier.png" alt="avatar" class="navAvatar">
-            <ul class="stats">
-                <li><img src="../assets/images/life.png" alt="" class="logoStats"> Health : 100</li>
-                <li><img src="../assets/images/sword.png" alt="" class="logoStats"> Attack : 200</li>
-                <li><img src="../assets/images/gold.png" alt="" class="logoStats"> Gold : 0</li>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    <img src="/assets/images/{{ hero.name | lower }}.png" alt="avatar" class="navAvatar">
+                    <ul class="stats">
+                <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+                <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+                <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
             </ul>
+            {% endif %}
+            {% endfor %}
+
+            <!---  bagScript --->
             <div class="bag">
                 <p>Bag</p>
                 <ul>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
-                    <li>
-                        <button>Item</button>
-                    </li>
+                    {% for hero in heroes %}
+                        {% if path[3] == hero.id %}
+                            <!-- displays weapons -->
+                            {% if weapons is empty %}
+                            {% else %}
+                                {% for weapon in weapons %}
+                                    {% if weapon.name is null %}
+                                    {% else %}
+                                    <li>
+                                        <button>{{weapon.name}}</button>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- end display weapons -->
+                            <!-- displays potions -->
+                            {% if potions is empty %}
+                            {% else %}
+                                {% for potion in potions %}
+                                    {% if potion.name is null %}
+                                    {% else %}
+                                    <li>
+                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- end display potions -->
+                            <!-- displays spells -->
+                            {% if spells is empty %}
+                            {% else %}
+                                {% for spell in spells %}
+                                    {% if spell.name is null %}
+                                    {% else %}
+                                        <li>
+                                            <button>{{spell.name}}</button>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- end display spells -->
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </nav>
         <div class="location">
-            <img src="../assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
-            <h4>Lieu</h4>
+            <img src="/assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
+            <h4>{{ locations }}</h4>
+                <button class="restartGame" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
         </div>
 
-        <main>
+        <main id="main">
             <!-- INSERT YOUR CODE HERE -->
             {% block main %}
-
+                <form>
+                    <input class="B-Reset"  type="button" value="Give Up">
+                </form>
             {% endblock main %}
         </main>
     </div>
     <!-- /body -->
     <script src="/assets/JS/combatScript.js"></script>
+    <script src="/assets/JS/itemsManagement.js"></script>
 
 {% endblock %}
-
