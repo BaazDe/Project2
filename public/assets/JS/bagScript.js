@@ -15,7 +15,7 @@ function bagScript(){
         history.classList.add("script");
         responses.classList.add("script");
         main.classList.add("script");
-        enigma.classList.add("blur");
+        enigma.classList.add("script");
         displayed = true;
     } else {
         document.getElementById("bagScript").classList.remove("script");

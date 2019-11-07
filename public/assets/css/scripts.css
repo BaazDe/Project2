@@ -8,7 +8,7 @@ main.script{
     transition-duration: 1s;
 }
 
-#history.script, #responses.script, #enigma.blur{
+#history.script, #responses.script, #enigma.script{
     filter: blur(5px);
     transition-duration: 1s;
 }
