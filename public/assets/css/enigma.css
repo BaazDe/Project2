@@ -8,6 +8,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 94vh;
 }
 
 #enigma{
@@ -19,6 +20,8 @@ main {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    flex-direction: row;
+    transition-duration: 1s;
 }
 
 .element{
@@ -65,11 +68,12 @@ input{
     text-align: center;
     justify-items: center;
     margin-top: 15px;
+    margin-bottom: 15px;
     font-family: 'Revalia', cursive;
     width: 100%;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 800px){
     *{
         margin: 0;
         padding: 0;
@@ -80,7 +84,6 @@ input{
     }
 
     #enigma{
-        display: flex;
         flex-direction: column;
     }
     .element{
@@ -89,6 +92,7 @@ input{
 
     .element2{
         margin: auto;
+        padding: 1em;
         width: 40%;
     }
 

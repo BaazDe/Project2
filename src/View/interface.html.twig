@@ -22,7 +22,6 @@
             <!---  bagScript --->
             <div class="bag">
                 <p>Bag</p>
-                <form action="" method="post">
                 <ul>
                     {% for hero in heroes %}
                         {% if path[3] == hero.id %}
@@ -46,7 +45,7 @@
                                     {% if potion.name is null %}
                                     {% else %}
                                     <li>
-                                        <button onclick="confirm('Utiliser cette potion ?'); location.reload()" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
                                     </li>
                                     {% endif %}
                                 {% endfor %}
@@ -68,7 +67,6 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-                </form>
             </div>
         </nav>
         <div class="location">
@@ -81,7 +79,7 @@
             <!-- INSERT YOUR CODE HERE -->
             {% block main %}
                 <form>
-                    <input classe="B-Reset"  type="button" value="Give Up">
+                    <input class="B-Reset"  type="button" value="Give Up">
                 </form>
             {% endblock main %}
         </main>

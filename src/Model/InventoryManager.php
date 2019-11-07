@@ -82,10 +82,22 @@ where h.id = :id_hero");
         $statement->execute();
     }
 
-    public function usePotion()
+    public function deletePotion()
     {
         // prepared request
         $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE potions_id=1 limit 1");
         $statement->execute();
+    }
+
+    public function getPotionRegen($idHero)
+    {
+        $statement = $this->pdo->prepare("select regen from inventory right join potions p on
+    inventory.potions_id = p.id where potions_id =1 and heroes_id=:idHero");
+        $statement->bindValue('idHero', $idHero, \PDO::PARAM_INT);
+        $statement->execute();
+        $potion = $statement->fetch();
+        $regen = intval($potion['regen']);
+
+        return $regen;
     }
 }

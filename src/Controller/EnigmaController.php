@@ -32,9 +32,6 @@ class EnigmaController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-        if (isset($_POST['potion'])) {
-            $itemsManager->usePotion();
-        }
         $enigmasManager = new EnigmasManager();
         $enigma = $enigmasManager->selectOneById($id);
         $storiesManager = new StoryManager();

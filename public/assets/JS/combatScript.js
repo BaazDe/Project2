@@ -1,35 +1,41 @@
+const displayWeapons = document.getElementById("displayedWeapons");
+const itemsDisplayer = document.getElementById("itemsDisplayer");
+const displayItems = document.getElementById("displayedItems");
+const weaponsDisplayer = document.getElementById("weaponsDisplayer");
+
 // Displays the weapon list
 let displayed = false;
 let displayed2 = false;
 document.getElementById("weaponsDisplayer").addEventListener("click", displayedWeapons);
 
-
-function displayedWeapons() {
-    if (displayed === false){
-        document.getElementById("displayedWeapons").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "none";
+function displayedWeapons()
+{
+    if (displayed === false) {
         displayed = true;
+        displayWeapons.classList.add("script");
+        itemsDisplayer.classList.add("displayN");
     } else {
-        document.getElementById("displayedWeapons").style.display= "none";
-        document.getElementById("itemsDisplayer").style.display= "block";
         displayed = false;
+        displayWeapons.classList.remove("script");
+        itemsDisplayer.classList.remove("displayN");
+        itemsDisplayer.classList.add("displayB");
     }
 }
 
 //Displays the item list
 document.getElementById("itemsDisplayer").addEventListener("click", displayedItems);
-function displayedItems() {
-    if (displayed === false){
-        document.getElementById("displayedItems").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "block";
-        document.getElementById("weaponsDisplayer").style.display= "none";
+
+function displayedItems()
+{
+    if (displayed === false) {
         displayed = true;
+        displayItems.classList.add("displayB");
+        weaponsDisplayer.classList.add("displayN");
     } else {
-        document.getElementById("displayedItems").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "block";
-        document.getElementById("weaponsDisplayer").style.display= "block";
-        document.getElementById("displayedItems").style.display= "none";
         displayed = false;
+        displayItems.classList.remove("displayB");
+        weaponsDisplayer.classList.remove("displayN");
+        weaponsDisplayer.classList.add("displayB");
     }
 }
 
