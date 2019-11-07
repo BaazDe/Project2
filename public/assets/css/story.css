@@ -22,6 +22,7 @@ main{
     border-radius: 20px;
     margin: 0 auto;
     padding: 3%;
+    transition-duration: 1s;
 }
 #history p{
     float: right;
@@ -37,6 +38,7 @@ main{
     width: 100%;
     float: right;
     justify-content: space-around;
+    transition-duration: 1s;
 }
 .response{
     text-decoration: none;
