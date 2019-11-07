@@ -22,7 +22,6 @@
             <!---  bagScript --->
             <div class="bag">
                 <p>Bag</p>
-
                 <ul>
                     {% for hero in heroes %}
                         {% if path[3] == hero.id %}
@@ -46,7 +45,7 @@
                                     {% if potion.name is null %}
                                     {% else %}
                                     <li>
-                                        <button onclick=" if(confirm('Utiliser cette potion ?')){window.location.href='';}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
                                     </li>
                                     {% endif %}
                                 {% endfor %}

@@ -1,0 +1,21 @@
+#bagScript.script{
+    display: block;
+    transition-duration: 1s;
+}
+
+main.script{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#history.script, #responses.script, #enigma.script{
+    filter: blur(5px);
+    transition-duration: 1s;
+}
+
+#displayedWeapons.script, #itemsDisplayer.displayB, #displayedItems.displayB, #weaponsDisplayer.displayB{
+    display: block;
+}
+
+#itemsDisplayer.displayN, #displayedItems.displayN, #weaponsDisplayer.displayN{
+    display: none;
+}
