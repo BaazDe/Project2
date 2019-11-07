@@ -3,63 +3,105 @@
     margin: 0;
 }
 
-body{
-    background-image: url("../images/tavern.jpeg");
-
-}
-
-main{
-    justify-content: space-around;
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 94vh;
 }
 
 #enigma{
-    margin: 0 auto;
+    font-family: 'Revalia', cursive;
+    margin: 5%;
     width: 90%;
     border: none;
     color: white;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    font-family: 'Revalia', cursive;
+    flex-direction: row;
 }
 
 .element{
-    margin: 50px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
+    margin: auto;
+}
+
+.element p{
+    padding: 5%;
 }
 
 .element2{
-    margin: 50px;
-    font-size: 16px;
-    align-self: center;
+    margin: 5%;
+    font-size: 18px;
+    text-align: center;
+    width: 200%;
 }
 
-.clue{
+.clue {
+    border: none;
+    background-color: rgba(129, 126, 126, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+#answer{
+    color: white;
     border: none;
     background-color:rgba(129, 126, 126, 0.5);
     border-radius: 20px;
     text-align: center;
+    font-family: 'Revalia', cursive;
+    width: 100%;
 }
-.code{
-    text-align: center;
-}
-.code2{
-    text-align: center;
-}
-.answer{
+
+input{
+    color: white;
     border: none;
     background-color:rgba(129, 126, 126, 0.5);
+    padding: 15px 35px 15px 35px;
     border-radius: 20px;
     text-align: center;
+    justify-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Revalia', cursive;
+    width: 100%;
 }
-.element2 button{
-    color:white;
-    border: none;
-    background-color:rgba(129, 126, 126, 0.5);
-    border-radius: 20px;
-    text-align: center;
-    margin: 50px;
-    display: flex;
-    align-items: flex-end;
+
+@media screen and (max-width: 800px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background-position: center;
+    }
+
+    #enigma{
+        flex-direction: column;
+    }
+    .element{
+        font-size: 15px;
+    }
+
+    .element2{
+        margin: auto;
+        padding: 1em;
+        width: 40%;
+    }
+
+    .clue {
+        padding: 8px 0;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .avatarMobile{
+        display: none;
+    }
 }

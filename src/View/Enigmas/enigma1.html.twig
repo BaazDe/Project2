@@ -3,30 +3,100 @@
 {% block stylesheet %}
     {% for hero in heroes %}
         {% if path[3] == hero.id %}
-            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+        <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
         {% endif %}
     {% endfor %}
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
+
 {% block title %}Story{% endblock title %}
 
 {% block main %}
+ <!-- TODO : form heading to next story if enigma is solved -->
     <div id="enigma">
-        <div class="element"><p>{{ enigme.story }}</p></div>
+        <div class="element"><p>{{ enigma.story }}</p></div>
         <div class="element2">
             <p class="clue">
                 Indice
                 <br>A -> Z
-                <br>Z -> A
+                <br>Z <- A
             </p>
             <br>
             <p class="code">Code secret :</p>
             <br>
             <p class="code2">ERVMH NV ELRI</p>
             <br>
-            <p class="answer">Réponse</p>
-            <button type="button">Valider</button>
+
+        <form action=" " method= "POST">
+            <label  for="answer"></label>
+            <textarea  id="answer"  placeholder="Réponse"></textarea>
+            <?= $errors["errorMessage"] ?>
+            <br>
+            <input type="button" value="Valider">
+        </form>
         </div>
     </div>
+
+    <!---  bagScript showing in mobile --->
+    <div id="bagScript">
+        <p>Bag</p>
+        <form action="" method="post">
+            <ul>
+                {% for hero in heroes %}
+                    {% if path[3] == hero.id %}
+                        <!-- displays weapons -->
+                        {% if weapons is empty %}
+                        {% else %}
+                            {% for weapon in weapons %}
+                                {% if weapon.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button>{{weapon.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display weapons -->
+                        <!-- displays potions -->
+                        {% if potions is empty %}
+                        {% else %}
+                            {% for potion in potions %}
+                                {% if potion.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.reload();}" type="submit"  name="{{potion.name}}">{{potion.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display potions -->
+                        <!-- displays spells -->
+                        {% if spells is empty %}
+                        {% else %}
+                            {% for spell in spells %}
+                                {% if spell.name is null %}
+                                {% else %}
+                                    <li>
+                                        <button>{{spell.name}}</button>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <!-- end display spells -->
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </form>
+        {% for hero in heroes %}
+            {% if path[3] == hero.id %}
+                <ul id="statsScript">
+                    <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+                    <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+                    <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+
     <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}

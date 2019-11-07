@@ -8,7 +8,7 @@ use App\Controller\AbstractController;
 class DeadManager extends AbstractController
 {
 
-    const TABLE = 'strories';
+    const TABLE = 'stories';
 
     /**
      *  Initializes this class.
