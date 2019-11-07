@@ -47,4 +47,10 @@ class EnigmaController extends AbstractController
             'path'=>$this->requestPath()
         ]);
     }
+public function Answer()
+{
+    for ($i<3, $i++){
+        if ($answer == )
+    }
+}
 }

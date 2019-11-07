@@ -25,14 +25,16 @@
             <br>
             <p class="code2">ERVMH NV ELRI</p>
             <br>
-        <form action=" " method= "POST">
+        <form action="<?= htmlspecialchars();?>" method= "POST">
             <label  for="answer"></label>
             <textarea  id="answer"  placeholder="Réponse"></textarea>
-            <?= $errors["errorMessage"] ?>
+            <?= $errors["errorAnswer"] ?>
+            <?= $good["goodAnswer"] ?>
             <br>
-            <input type="button" value="Valider">
+            <a href="../../../quest/story/1/1"><input type="button" value="Valider" onclick="compteARebours();"></a>
         </form>
         </div>
     </div>
-    <script src="/assets/JS/bagScript.js"></script>
+<script src="/assets/JS/bagScript.js"></script>
+
 {% endblock %}
