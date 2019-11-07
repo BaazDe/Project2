@@ -37,12 +37,6 @@ class QuestController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-
-        //TODO: bug -> if click confirm is false, function is still running
-        if (isset($_POST['potion'])) {
-            $itemsManager->usePotion();
-        }
-
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
@@ -66,5 +60,16 @@ class QuestController extends AbstractController
             'locations' =>$location,
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function usePotion($idHero)
+    {
+        $potionsManager = new InventoryManager();
+        $heroManager = new HeroesManager();
+        $heroManager->setHealthFromPotion($idHero);
+        //delete this potion from inventory
+        $potionsManager->deletePotion();
+        //header on the page where the potion was used
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
