@@ -11,4 +11,13 @@ class LocationManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function selectPicture($picture)
+    {
+        $statement = $this->pdo->prepare("SELECT  locations.picture  FROM  locations
+        join stories s on locations.id = s.locations_id");
+        $statement->bindValue('location_id', $picture, \PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetch();
+    }
 }
