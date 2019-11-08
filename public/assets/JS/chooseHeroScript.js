@@ -16,7 +16,7 @@ const rogueBtn = document.getElementById("rogue-btn");
 if (width <= 640) {
     //warrior
     let displayed = false;
-    document.getElementById("card-warrior").addEventListener("click", displayHero);
+    cardWarrior.addEventListener("click", displayHero);
 
     function displayHero()
     {
@@ -26,19 +26,19 @@ if (width <= 640) {
             statsWarrior.classList.add("displayWarrior");
             warriorBtn.classList.add("displayWarrior");
             //mage reset
-            statsMage.classList.add("resetMage");
-            mageBtn.classList.add("resetMage");
-            cardMage.classList.add("resetMage");
+            cardMage.classList.remove("displayMage");
+            statsMage.classList.remove("displayMage");
+            mageBtn.classList.remove("displayMage");
             //rogue reset
-            statsRogue.classList.add("resetRogue");
-            rogueBtn.classList.add("resetRogue");
-            cardRogue.classList.add("resetRogue");
+            cardRogue.classList.remove("displayRogue");
+            statsRogue.classList.remove("displayRogue");
+            rogueBtn.classList.remove("displayRogue");
             displayed = true;
         } else {
             //warrior reset
-            statsWarrior.classList.add("resetWarrior");
-            warriorBtn.classList.add("resetWarrior");
-            cardWarrior.classList.add("resetWarrior");
+            cardWarrior.classList.remove("displayWarrior");
+            statsWarrior.classList.remove("displayWarrior");
+            warriorBtn.classList.remove("displayWarrior");
             displayed = false;
         }
     }
@@ -46,7 +46,7 @@ if (width <= 640) {
 
     // mage
     let displayed2 = false;
-    document.getElementById("card-mage").addEventListener("click", displayMage);
+    cardMage.addEventListener("click", displayMage);
 
     function displayMage()
     {
@@ -56,19 +56,19 @@ if (width <= 640) {
             statsMage.classList.add("displayMage");
             mageBtn.classList.add("displayMage");
             //rogue reset
-            statsRogue.classList.add("resetRogue");
-            rogueBtn.classList.add("resetRogue");
-            cardRogue.classList.add("resetRogue");
+            cardRogue.classList.remove("displayRogue");
+            statsRogue.classList.remove("displayRogue");
+            rogueBtn.classList.remove("displayRogue");
             //warrior reset
-            statsWarrior.classList.add("resetWarrior");
-            warriorBtn.classList.add("resetWarrior");
-            cardWarrior.classList.add("resetWarrior");
+            cardWarrior.classList.remove("displayWarrior");
+            statsWarrior.classList.remove("displayWarrior");
+            warriorBtn.classList.remove("displayWarrior");
             displayed2 = true;
         } else {
             //mage reset
-            statsMage.classList.add("resetMage");
-            mageBtn.classList.add("resetMage");
-            cardMage.classList.add("resetMage");
+            cardMage.classList.remove("displayMage");
+            statsMage.classList.remove("displayMage");
+            mageBtn.classList.remove("displayMage");
             displayed2 = false;
         }
     }
@@ -76,7 +76,7 @@ if (width <= 640) {
 
     // rogue
     let displayed3 = false;
-    document.getElementById("card-rogue").addEventListener("click", displayRogue);
+    cardRogue.addEventListener("click", displayRogue);
 
     function displayRogue()
     {
@@ -86,19 +86,19 @@ if (width <= 640) {
             statsRogue.classList.add("displayRogue");
             rogueBtn.classList.add("displayRogue");
             //warrior reset
-            statsWarrior.classList.add("resetWarrior");
-            warriorBtn.classList.add("resetWarrior");
-            cardWarrior.classList.add("resetWarrior");
+            cardWarrior.classList.remove("displayWarrior");
+            statsWarrior.classList.remove("displayWarrior");
+            warriorBtn.classList.remove("displayWarrior");
             //mage reset
-            statsMage.classList.add("resetMage");
-            mageBtn.classList.add("resetMage");
-            cardMage.classList.add("resetMage");
+            cardMage.classList.remove("displayMage");
+            statsMage.classList.remove("displayMage");
+            mageBtn.classList.remove("displayMage");
             displayed3 = true;
         } else {
             //rogue reset
-            statsRogue.classList.add("resetRogue");
-            rogueBtn.classList.add("resetRogue");
-            cardRogue.classList.add("resetRogue");
+            cardRogue.classList.remove("displayRogue");
+            statsRogue.classList.remove("displayRogue");
+            rogueBtn.classList.remove("displayRogue");
             displayed3 = false;
         }
     }
