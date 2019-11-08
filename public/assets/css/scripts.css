@@ -35,15 +35,3 @@ main.script{
 #warrior-btn.displayWarrior, #mage-btn.displayMage, #rogue-btn.displayRogue{
     display: block;
 }
-
-#card-warrior.resetWarrior, #card-mage.resetMage, #card-rogue.resetRogue{
-    height: calc(100%/7);
-}
-
-#stats-warrior.resetWarrior, #stats-mage.resetMage, #stats-rogue.resetRogue{
-    display: none;
-}
-
-#warrior-btn.resetWarrior, #mage-btn.resetMage, #rogue-btn.resetRogue{
-    display: none;
-}
