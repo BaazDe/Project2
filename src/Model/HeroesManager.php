@@ -55,7 +55,6 @@ class HeroesManager extends AbstractManager
         } else {
             $newHealth = $heroCurrentHealth+$potionRegen;
         }
-        //$newHealth = $heroCurrentHealth+$potionRegen;
         $statement = $this->pdo->prepare("UPDATE $this->table SET health = :newHealth WHERE id = :id");
         $statement->bindValue('id', $idHero, \PDO::PARAM_INT);
         $statement->bindValue('newHealth', $newHealth, \PDO::PARAM_INT);
