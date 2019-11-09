@@ -73,8 +73,13 @@ class QuestController extends AbstractController
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
-    public function end()
+    // send to dead page
+    public function end($id)
     {
-        return $this->twig->render('Story/dead.html.twig');
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', [
+            'stories' => $story
+        ]);
     }
 }

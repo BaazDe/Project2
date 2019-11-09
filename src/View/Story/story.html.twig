@@ -1,13 +1,17 @@
 {% extends 'interface.html.twig' %}
 
  {% block stylesheet %}
-     {% for hero in heroes %}
 
+     {% for hero in heroes %}
+         {% if path[2] ==storie.id %}
+             <link rel="stylesheet" href="/assets/css/deadcharacter.css">
+         {% endif %}
         {% if path[3] == hero.id %}
             <link rel="stylesheet" href="/assets/css/interface.css">
         {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
+
  {% endblock %}
 {% block title %}Story{% endblock title %}
 
