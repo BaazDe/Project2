@@ -76,8 +76,10 @@ class QuestController extends AbstractController
     }
 
     // send to dead page
-    public function end()
+    public function end($id)
     {
-        return $this->twig->render('Story/dead.html.twig');
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);
     }
 }
