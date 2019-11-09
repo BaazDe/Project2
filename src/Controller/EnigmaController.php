@@ -60,7 +60,7 @@ class EnigmaController extends AbstractController
            ]);
     }
 
-    public function sendAnswer($id, $idHero)
+    public function sendAnswer($id, $idHero): bool
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -69,17 +69,16 @@ class EnigmaController extends AbstractController
             $_SESSION["answer1"] ++;
             var_dump($_SESSION);
             var_dump($_SESSION["answer1"]);
-            // si mauvaise réponse
             if ($answer != self::ENIGMA1_ANSWER) {
                 if ($_SESSION["answer1"] >= 3) {
-                    return header('Location: ../../../quest/end');
+                    header('Location: ../../../quest/end');
                 }
-                return header('Location: ' . $_SERVER['HTTP_REFERER']);
-
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
             } else {
                 $id += 2;
-                return header("Location: ../../../quest/story/$id/$idHero");
+                header("Location: ../../../quest/story/$id/$idHero");
             }
         }
+        return true;
     }
 }
