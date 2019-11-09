@@ -6,8 +6,8 @@ namespace App\Controller;
 use App\Model\EnigmasManager;
 use App\Model\HeroesManager;
 use App\Model\InventoryManager;
-use App\Model\StoryManager;
 use App\Model\LocationManager;
+use App\Model\StoryManager;
 
 class EnigmaController extends AbstractController
 {
@@ -40,41 +40,40 @@ class EnigmaController extends AbstractController
         $story = $storiesManager->selectOneById($id);
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
-        //display locations
+
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
-
-        var_dump($_SESSION);
-
         return $this->twig->render('Enigmas/enigma1.html.twig', [
-           'potions' => $potions,
-           'weapons'=>$weapons,
-           'spells'=>$spells,
-           'story' => $story,
-           'enigma' => $enigma,
-           'heroes'=>$heroes,
-           'locations' =>$location,
-           'path'=>$this->requestPath()
-           ]);
+            'potions' => $potions,
+            'weapons'=>$weapons,
+            'spells'=>$spells,
+            'story' => $story,
+            'enigma' => $enigma,
+            'heroes'=>$heroes,
+            'locations' =>$location,
+            'path'=>$this->requestPath()
+        ]);
     }
 
     public function sendAnswer($id, $idHero): bool
     {
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $answer = $_POST['answer'];
             $answer = strtolower($answer);
             $_SESSION["answer1"] ++;
             if ($answer != self::ENIGMA1_ANSWER) {
                 if ($_SESSION["answer1"] >= 3) {
-                    header('Location: ../../../quest/end');
+                    header('Location: ../../../quest/end/4');
+                } else {
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    return true;
                 }
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
             } else {
                 $id += 2;
                 header("Location: ../../../quest/story/$id/$idHero");
+                return true;
             }
         }
         return true;

@@ -50,10 +50,6 @@ class QuestController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
-
-        var_dump($_SESSION);
-
-
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -75,5 +71,15 @@ class QuestController extends AbstractController
         $potionsManager->deletePotion();
         //header on the page where the potion was used
         header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    // send to dead page
+    public function end($id)
+    {
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', [
+            'stories' => $story
+        ]);
     }
 }
