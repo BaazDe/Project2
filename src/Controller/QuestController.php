@@ -72,4 +72,14 @@ class QuestController extends AbstractController
         //header on the page where the potion was used
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
+    // send to dead page
+    public function end($id)
+    {
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', [
+            'stories' => $story
+        ]);
+    }
 }
