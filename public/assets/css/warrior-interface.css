@@ -172,6 +172,10 @@ main{
     margin-bottom: 15%;
 }
 
+.actionBtn button {
+    background: radial-gradient(70.63% 70.63% at 50% 50%, rgba(166, 166, 166, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
 @media screen and (max-width: 800px){
     .content{
         grid-template-columns: auto;
