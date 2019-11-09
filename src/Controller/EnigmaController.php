@@ -11,6 +11,8 @@ use App\Model\LocationManager;
 
 class EnigmaController extends AbstractController
 {
+
+    const ENIGMA1_ANSWER = "viens me voir";
     public function requestPath()
     {
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
@@ -43,6 +45,9 @@ class EnigmaController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
+
+        var_dump($_SESSION);
+
         return $this->twig->render('Enigmas/enigma1.html.twig', [
            'potions' => $potions,
            'weapons'=>$weapons,
@@ -53,5 +58,28 @@ class EnigmaController extends AbstractController
            'locations' =>$location,
            'path'=>$this->requestPath()
            ]);
+    }
+
+    public function sendAnswer($id, $idHero)
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $answer = $_POST['answer'];
+            $answer = strtolower($answer);
+            $_SESSION["answer1"] ++;
+            var_dump($_SESSION);
+            var_dump($_SESSION["answer1"]);
+            // si mauvaise réponse
+            if ($answer != self::ENIGMA1_ANSWER) {
+                if ($_SESSION["answer1"] >= 3) {
+                    return header('Location: ../../../quest/end');
+                }
+                return header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+            } else {
+                $id += 2;
+                return header("Location: ../../../quest/story/$id/$idHero");
+            }
+        }
     }
 }

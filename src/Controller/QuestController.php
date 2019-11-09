@@ -50,6 +50,10 @@ class QuestController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
+
+        var_dump($_SESSION);
+
+
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -72,4 +76,5 @@ class QuestController extends AbstractController
         //header on the page where the potion was used
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
 }
