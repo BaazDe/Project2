@@ -1,7 +1,6 @@
 let width = window.screen.width;
 console.log(width);
 
-
 const cardWarrior = document.getElementById("card-warrior");
 const statsWarrior = document.getElementById("stats-warrior");
 const warriorBtn = document.getElementById("warrior-btn");
@@ -11,7 +10,6 @@ const mageBtn = document.getElementById("mage-btn");
 const cardRogue = document.getElementById("card-rogue");
 const statsRogue = document.getElementById("stats-rogue");
 const rogueBtn = document.getElementById("rogue-btn");
-
 
 if (width <= 640) {
     //warrior
@@ -32,7 +30,6 @@ if (width <= 640) {
         rogueBtn.classList.remove("displayRogue");
     }
 
-
     // mage
     cardMage.addEventListener("click", displayMage);
     function displayMage()
@@ -50,7 +47,6 @@ if (width <= 640) {
         statsWarrior.classList.remove("displayWarrior");
         warriorBtn.classList.remove("displayWarrior");
     }
-
 
     // rogue
     cardRogue.addEventListener("click", displayRogue);

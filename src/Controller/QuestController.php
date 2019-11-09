@@ -72,4 +72,9 @@ class QuestController extends AbstractController
         //header on the page where the potion was used
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
+    public function end()
+    {
+        return $this->twig->render('Story/dead.html.twig');
+    }
 }

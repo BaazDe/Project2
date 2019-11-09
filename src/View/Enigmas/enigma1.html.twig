@@ -1,11 +1,6 @@
 {% extends 'interface.html.twig' %}
 
 {% block stylesheet %}
-    {% for hero in heroes %}
-        {% if path[3] == hero.id %}
-        <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
-        {% endif %}
-    {% endfor %}
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
 
@@ -13,7 +8,9 @@
 
 {% block main %}
  <!-- TODO : form heading to next story if enigma is solved -->
-    <div id="enigma">
+{% for hero in heroes %}
+{% if path[3] == hero.id %}
+    <div id="enigma-{{ hero.name }}">
         <div class="element"><p>{{ enigma.story }}</p></div>
         <div class="element2">
             <p class="clue">
@@ -36,6 +33,8 @@
         </form>
         </div>
     </div>
+{% endif %}
+{% endfor %}
 
     <!---  bagScript showing in mobile --->
     <div id="bagScript">
@@ -50,7 +49,7 @@
                             {% if weapon.name is null %}
                             {% else %}
                                 <li>
-                                    <button>{{weapon.name}}</button>
+                                    <button class="inventoryBtn-{{ hero.name }}">{{weapon.name}}</button>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -63,7 +62,7 @@
                             {% if potion.name is null %}
                             {% else %}
                                 <li>
-                                    <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                    <button class="inventoryBtn-{{ hero.name }}" onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
                                 </li>
                             {% endif %}
                         {% endfor %}

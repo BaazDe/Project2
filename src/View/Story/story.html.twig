@@ -4,7 +4,7 @@
      {% for hero in heroes %}
 
         {% if path[3] == hero.id %}
-            <link rel="stylesheet" href="/assets/css/{{ hero.name }}-interface.css">
+            <link rel="stylesheet" href="/assets/css/interface.css">
         {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/story.css">
@@ -24,7 +24,7 @@
         {% for hero in heroes %}
         {% if path[3] == hero.id %}
         {% for choice in choices %}
-            <a class="response" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}"><p>{{ choice.choice }}</p></a>
+            <a class="response-{{ hero.name }}" href="/{{ choice.controller }}/{{ choice.consequences }}/{{ hero.id }}"><p>{{ choice.choice }}</p></a>
         {% endfor %}
         {% endif %}
         {% endfor %}
@@ -43,7 +43,7 @@
                             {% if weapon.name is null %}
                             {% else %}
                                 <li>
-                                    <button>{{weapon.name}}</button>
+                                    <button class="inventoryBtn-{{ hero.name }}">{{weapon.name}}</button>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -56,7 +56,7 @@
                             {% if potion.name is null %}
                             {% else %}
                                 <li>
-                                    <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                    <button class="inventoryBtn-{{ hero.name }}" onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
                                 </li>
                             {% endif %}
                         {% endfor %}
