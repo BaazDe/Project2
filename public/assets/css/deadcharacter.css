@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
 }
 
 h2{
@@ -69,6 +70,8 @@ p{
     body{
     background-position: center;
 }
+
+
     #history{
         display: flex;
         justify-content: space-around;
