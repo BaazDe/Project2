@@ -67,8 +67,6 @@ class EnigmaController extends AbstractController
             $answer = $_POST['answer'];
             $answer = strtolower($answer);
             $_SESSION["answer1"] ++;
-            var_dump($_SESSION);
-            var_dump($_SESSION["answer1"]);
             if ($answer != self::ENIGMA1_ANSWER) {
                 if ($_SESSION["answer1"] >= 3) {
                     header('Location: ../../../quest/end');
