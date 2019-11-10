@@ -10,6 +10,7 @@ class HomeController extends AbstractController
 {
     public function index()
     {
+        $_SESSION["answer1"]=0;
         return $this->twig->render('Begin/begin.html.twig');
     }
 
