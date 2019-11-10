@@ -6,6 +6,8 @@
          {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/combat.css">
+     <link rel="stylesheet" href="/assets/css/scripts.css">
+
  {% endblock %}
 
 
@@ -57,7 +59,12 @@
                                         {% for weapon in weapons %}
                                             {% if weapon.name is null %}
                                             {% else %}
-                                                    <button id="{{ weapons.name }}">{{weapon.name | capitalize}}</button>
+                                                    <button id="{{weapon.name}}"
+                                                    onclick="document.getElementById('weaponStats').classList.
+                                                    toggle('displayF'); document.getElementById('{{weapon.name}}')
+                                                            .classList.toggle('displayN')">
+                                                        {{weapon.name | capitalize}}
+                                                    </button>
                                             {% endif %}
                                         {% endfor %}
                                     {% endif %}
@@ -78,12 +85,13 @@
                                 </div>
 
                                 <div id="weaponStats">
-                                    <span class="itemInBar">Axe</span>
-                                    <img src="../assets/images/sword.png" alt="sword" class="logoStats">
-                                    <span class="statInBar">20</span>
+                                    {% for weapon in weapons %}
+                                    <span class="itemInBar">{{ weapon.name | capitalize }}</span>
+                                    <img src="/assets/images/sword.png" alt="sword" class="logoStats">
+                                    <span class="statInBar">{{ weapon.attack }}</span>
                                     <button id="attack">Attack</button>
+                                    {% endfor %}
                                 </div>
-
                             </div>
 
 
