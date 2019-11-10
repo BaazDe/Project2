@@ -45,7 +45,6 @@ class EnigmaController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
-        var_dump($_SESSION);
         return $this->twig->render('Enigmas/enigma1.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -63,12 +62,12 @@ class EnigmaController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $answer = $_POST['answer'];
             $answer = strtolower($answer);
-            $_SESSION["answer1"] ++;
             if ($_SESSION["answer1"] >= 3) {
                 header('Location: ../../../quest/end/4');
                 return true;
             }
             if ($answer != self::ENIGMA1_ANSWER) {
+                $_SESSION["answer1"] ++;
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
                 return true;
             } else {
