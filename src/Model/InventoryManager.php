@@ -100,4 +100,16 @@ where h.id = :id_hero");
 
         return $regen;
     }
+
+    public function getWeaponAttack($weaponName, $idHero)
+    {
+        $statement = $this->pdo->prepare("select weapons.attack from weapons
+    join inventory i on weapons.id = i.weapons_id where weapons.name=:weaponName and heroes_id=:idHero");
+        $statement->bindValue('weaponName', $weaponName, \PDO::PARAM_STR);
+        $statement->bindValue('idHero', $idHero, \PDO::PARAM_INT);
+        $statement->execute();
+        $weapon = $statement->fetch();
+        $attack = intval($weapon['attack']);
+        return $attack;
+    }
 }

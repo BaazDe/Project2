@@ -47,7 +47,37 @@ class CombatController extends AbstractController
             'heroes'=>$heroes,
             'hero'=>$hero,
             'creature'=> $creature,
+            'heroMaxHealth' => HeroesManager::MAX_HEALTH[$idHero],
+            'creatureMaxHealth' => CreaturesManager::MAX_HEALTH[$idCreature],
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function useWeapon($weaponName, $idHero, $idCreature)
+    {
+        $weaponsManager = new InventoryManager();
+        //getting weapon ATTACK
+        $weaponAttack = $weaponsManager->getWeaponAttack($weaponName, $idHero);
+
+        $creatureManager = new CreaturesManager();
+        //getting creature ATTACK
+        $creatureAttack = $creatureManager->getCreatureAttack($idCreature);
+
+        $heroManager = new HeroesManager();
+        //getting hero ATTACK
+        $heroAttack = $heroManager->getHeroAttack($idHero);
+
+        // hero's damage formula
+        $heroTotalAttack = $heroAttack+$weaponAttack;
+        $min = intval(($heroTotalAttack*0.1));
+        $max = intval(($heroTotalAttack*0.3));
+        $heroDamage = rand($min, $max);
+        //Creature takes damage
+        $creatureManager->setHealthFromAttack($idCreature, $heroDamage);
+
+        //Hero takes damage
+        $heroManager->setHealthFromAttack($idHero, $creatureAttack);
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

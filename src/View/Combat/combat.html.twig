@@ -28,7 +28,7 @@
                     <!-- image and lifebar -->
                     <div class="creatureState">
                         <img src="/assets/images/{{ creature.name }}.png" alt="creatureSprite" class="creatureSprite" />
-                        <progress id="healthCreature" value="{{ creature.health }}" max="100"></progress>
+                        <progress id="healthCreature" value="{{ creature.health }}" max="{{ creatureMaxHealth }}"></progress>
                     </div>
 
                 </div>
@@ -60,10 +60,13 @@
                                             {% if weapon.name is null %}
                                             {% else %}
                                                     <button id="{{weapon.name}}"
-                                                    onclick="document.getElementById('weaponStats').classList.
-                                                    toggle('displayF'); document.getElementById('{{weapon.name}}')
-                                                            .classList.toggle('displayN')">
+                                                            onclick="if(confirm('Utiliser cette arme ?'))
+                                                                    {location.href='/combat/useweapon/{{ weapon.name }}/{{ path[3] }}/{{ path[2] }}'}"
+                                                            type="submit"
+                                                            name="{{weapon.name}}">
                                                         {{weapon.name | capitalize}}
+                                                        <img src="/assets/images/sword.png" alt="sword" class="logoStats">
+                                                        <span class="statInBar">{{ weapon.attack }}</span>
                                                     </button>
                                             {% endif %}
                                         {% endfor %}
@@ -84,18 +87,18 @@
                                     {% endif %}
                                 </div>
 
-                                <div id="weaponStats">
+                                <!--<div id="weaponStats">
                                     {% for weapon in weapons %}
                                     <span class="itemInBar">{{ weapon.name | capitalize }}</span>
                                     <img src="/assets/images/sword.png" alt="sword" class="logoStats">
                                     <span class="statInBar">{{ weapon.attack }}</span>
                                     <button id="attack">Attack</button>
                                     {% endfor %}
-                                </div>
+                                </div>-->
                             </div>
 
 
-                            <progress id="healthUser" value="70" max="100"></progress>
+                            <progress id="healthUser" value="{{hero.health}}" max="{{ heroMaxHealth }}"></progress>
                         </div>
                     </div>
                 </div>
