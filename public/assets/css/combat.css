@@ -49,6 +49,7 @@ button:hover{
 
 .creatureBlock{
     display: flex;
+    max-height: 400px;
 }
 
 .userBlock{
