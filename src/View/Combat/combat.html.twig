@@ -11,7 +11,7 @@
 
 {% block main %}
             <div class="combat">
-            <h5>Un loup vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
+            <h5>Un {{creature.name}} vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
             <div class="combatInterface">
 
                 <!-- The creature block -->
@@ -20,13 +20,13 @@
                     <!-- state text during combat -->
                     <div class="creatureText">
                         <div class="combatText">
-                            <p>Le loup vous inflige 20 points de dégats</p>
+                            <p>Le {{creature.name}} vous inflige 20 points de dégats</p>
                         </div>
                     </div>
                     <!-- image and lifebar -->
                     <div class="creatureState">
-                        <img src="../assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
-                        <progress id="healthCreature" value="40" max="100"></progress>
+                        <img src="/assets/images/{{ creature.name }}.png" alt="creatureSprite" class="creatureSprite" />
+                        <progress id="healthCreature" value="{{ creature.health }}" max="100"></progress>
                     </div>
 
                 </div>
@@ -37,11 +37,11 @@
                     <!-- image and lifebar + interaction buttons -->
                     <div class="userState">
                         <div class="avatar">
-                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                            <img src="/assets/images/{{ hero.name }}.png" alt="userAvatar" class="avatar">
                         </div>
 
                         <div class="avatarMobile">
-                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatarMobile">
+                            <img src="/assets/images/{{ hero.name }}.png" alt="userAvatar" class="avatarMobile">
                         </div>
 
                         <div class="actions">
@@ -52,13 +52,29 @@
 
                                 <!-- combatScript starts -->
                                 <div id="displayedWeapons" class="displayedBar">
-                                    <button id="axe">Axe</button>
-                                    <button>Sword</button>
+                                    {% if weapons is empty %}
+                                    {% else %}
+                                        {% for weapon in weapons %}
+                                            {% if weapon.name is null %}
+                                            {% else %}
+                                                    <button id="{{ weapons.name }}">{{weapon.name | capitalize}}</button>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
                                 </div>
 
                                 <div id="displayedItems" class="displayedBar">
-                                    <button>Potion</button>
-                                    <button>Key</button>
+                                    {% if potions is empty %}
+                                    {% else %}
+                                        {% for potion in potions %}
+                                            {% if potion.name is null %}
+                                            {% else %}
+                                                    <button onclick="if(confirm('Utiliser cette potion ?'))
+                                                    {location.href='/quest/usepotion/{{ hero.id }}'}" type="submit"
+                                                            name="{{potion.name}}">{{potion.name|capitalize}}</button>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
                                 </div>
 
                                 <div id="weaponStats">
