@@ -40,17 +40,25 @@ class CombatController extends AbstractController
         $creaturesManager = new CreaturesManager();
         $creature = $creaturesManager->selectOneById($idCreature);
 
-        return $this->twig->render('Combat/combat.html.twig', [
-            'potions' => $potions,
-            'weapons'=>$weapons,
-            'spells'=>$spells,
-            'heroes'=>$heroes,
-            'hero'=>$hero,
-            'creature'=> $creature,
-            'heroMaxHealth' => HeroesManager::MAX_HEALTH[$idHero],
-            'creatureMaxHealth' => CreaturesManager::MAX_HEALTH[$idCreature],
-            'path'=>$this->requestPath()
-        ]);
+        $heroHealth = $heroesManager->getCurrentHealth($idHero);
+        $creatureHealth = $creaturesManager->getCurrentHealth($idCreature);
+        if ($heroHealth <= 0) {
+            header("Location: ../../../quest/end/$idHero");
+        } elseif ($creatureHealth <= 0) {
+            header("Location: ../../../buy/buynow");
+        } else {
+            return $this->twig->render('Combat/combat.html.twig', [
+                'potions' => $potions,
+                'weapons' => $weapons,
+                'spells' => $spells,
+                'heroes' => $heroes,
+                'hero' => $hero,
+                'creature' => $creature,
+                'heroMaxHealth' => HeroesManager::MAX_HEALTH[$idHero],
+                'creatureMaxHealth' => CreaturesManager::MAX_HEALTH[$idCreature],
+                'path' => $this->requestPath()
+            ]);
+        }
     }
 
     public function useWeapon($weaponName, $idHero, $idCreature)
