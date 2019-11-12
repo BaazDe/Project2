@@ -1,30 +1,38 @@
-const responseWarrior = document.querySelector(".response-warrior");
-const responseMage = document.querySelector(".response-mage");
-const responseRogue = document.querySelector(".response-rogue");
-const restartGameWarrior = document.querySelector(".restartGame-warrior");
-const restartGameMage = document.querySelector(".restartGame-mage");
-const restartGameRogue = document.querySelector(".restartGame-rogue");
-const inventoryBtnWarrior = document.querySelector(".inventoryBtn-warrior");
+const responseWarrior = document.querySelectorAll(".response-warrior");
+const responseMage = document.querySelectorAll(".response-mage");
+const responseRogue = document.querySelectorAll(".response-rogue");
+const restartButton = document.getElementById("restartButton");
+const inventoryBtnWarrior = document.querySelectorAll(".inventoryBtn-warrior");
+const inventoryBtnMage = document.querySelectorAll(".inventoryBtn-mage");
+const inventoryBtnRogue = document.querySelectorAll(".inventoryBtn-rogue");
 const enigmaWarrior = document.getElementById("enigma-warrior");
 const enigmaMage = document.getElementById("enigma-mage");
 const enigmaRogue = document.getElementById("enigma-rogue");
-const inventoryBtnMage = document.querySelector(".inventoryBtn-mage");
-const inventoryBtnRogue = document.querySelector(".inventoryBtn-rogue");
 
-if (responseMage || enigmaMage !== null) {
-    responseMage.classList.add("color");
-    restartGameMage.classList.add("color");
-    inventoryBtnMage.classList.add("color");
-}
+console.log(restartButton.getAttribute('class'));
 
-if (responseWarrior || enigmaWarrior !== null) {
-    responseWarrior.classList.add("color");
-    restartGameWarrior.classList.add("color");
-    inventoryBtnWarrior.classList.add("color");
-}
-
-if (responseRogue || enigmaRogue !== null) {
-    responseRogue.classList.add("color");
-    restartGameRogue.classList.add("color");
-    inventoryBtnRogue.classList.add("color");
-}
+if (restartButton.getAttribute('class') === "restartGame-rogue") {
+    restartButton.classList.add("color");
+    responseRogue.forEach(function (element) {
+        element.classList.add("color");
+    });
+    inventoryBtnRogue.forEach(function (element) {
+        element.classList.add("color");
+    });
+} else if (restartButton.getAttribute('class') === "restartGame-mage") {
+    restartButton.classList.add("color");
+    responseMage.forEach(function (element) {
+        element.classList.add("color");
+    });
+    inventoryBtnMage.forEach(function (element) {
+        element.classList.add("color");
+    });
+} else if (restartButton.getAttribute('class') === "restartGame-warrior") {
+    restartButton.classList.add("color");
+    responseWarrior.forEach(function (element) {
+        element.classList.add("color");
+    });
+    inventoryBtnWarrior.forEach(function (element) {
+        element.classList.add("color");
+    });
+}  

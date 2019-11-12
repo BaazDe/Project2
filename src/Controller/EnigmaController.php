@@ -45,7 +45,6 @@ class EnigmaController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
-        var_dump($_SESSION);
         return $this->twig->render('Enigmas/enigma1.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
