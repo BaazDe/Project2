@@ -7,9 +7,7 @@
 #displayedItems{
     display: none;
 }
-#weaponStats{
-    display: none;
-}
+
 
 /* end JS */
 
@@ -51,6 +49,7 @@ button:hover{
 
 .creatureBlock{
     display: flex;
+    max-height: 400px;
 }
 
 .userBlock{
@@ -113,6 +112,9 @@ button:hover{
 }
 
 .actionBtn button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     color: #FFFFFF;
     width: 157px;
     height: 33px;
@@ -136,7 +138,7 @@ button:hover{
     align-items: center;
     color: #FFFFFF;
     min-width: 300px;
-    max-width: 80%;
+    max-width: 50%;
     height: 33px;
     margin: 0 0 3px 0;
     font-family: 'Revalia', cursive;
