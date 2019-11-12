@@ -63,10 +63,9 @@ input{
     color: white;
     border: none;
     background-color:rgba(129, 126, 126, 0.5);
-    padding: 15px 35px 15px 35px;
+    padding: 12px 35px 15px 35px;
     border-radius: 20px;
     text-align: center;
-    justify-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
     font-family: 'Revalia', cursive;
