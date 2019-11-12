@@ -22,6 +22,14 @@ main.script{
     display: none;
 }
 
+.displayN{
+    display: none;
+}
+
+#weaponStats.displayF{
+    display: flex;
+}
+
 /*----- Choose Hero -------------------------------------*/
 
 #card-warrior.displayWarrior, #card-mage.displayMage, #card-rogue.displayRogue{

@@ -6,12 +6,14 @@
          {% endif %}
      {% endfor %}
      <link rel="stylesheet" href="/assets/css/combat.css">
+     <link rel="stylesheet" href="/assets/css/scripts.css">
+
  {% endblock %}
 
 
 {% block main %}
             <div class="combat">
-            <h5>Un loup vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
+            <h5>Un {{creature.name}} vous attaque !</h5>  <!-- TODO:render the creature  name dynamic -->
             <div class="combatInterface">
 
                 <!-- The creature block -->
@@ -19,16 +21,18 @@
 
                     <!-- state text during combat -->
                     <div class="creatureText">
+                        <!--
+                        TODO: Don't know yet how to get attack values from useWeapon function
                         <div class="combatText">
-                            <p>Le loup vous inflige 20 points de dégats</p>
+                            <p>Le {{creature.name}} vous inflige 20 points de dégats</p>
                         </div>
+                         -->
                     </div>
                     <!-- image and lifebar -->
                     <div class="creatureState">
-                        <img src="../assets/images/loup.png" alt="creatureSprite" class="creatureSprite" />
-                        <progress id="healthCreature" value="40" max="100"></progress>
+                        <img src="/assets/images/{{ creature.name }}.png" alt="creatureSprite" class="creatureSprite" />
+                        <progress id="healthCreature" value="{{ creature.health }}" max="{{ creatureMaxHealth }}"></progress>
                     </div>
-
                 </div>
 
                 <!-- The user block -->
@@ -37,11 +41,11 @@
                     <!-- image and lifebar + interaction buttons -->
                     <div class="userState">
                         <div class="avatar">
-                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatar">
+                            <img src="/assets/images/{{ hero.name }}.png" alt="userAvatar" class="avatar">
                         </div>
 
                         <div class="avatarMobile">
-                            <img src="../assets/images/guerrier.gif" alt="userAvatar" class="avatarMobile">
+                            <img src="/assets/images/{{ hero.name }}.png" alt="userAvatar" class="avatarMobile">
                         </div>
 
                         <div class="actions">
@@ -52,26 +56,49 @@
 
                                 <!-- combatScript starts -->
                                 <div id="displayedWeapons" class="displayedBar">
-                                    <button id="axe">Axe</button>
-                                    <button>Sword</button>
+                                    {% if weapons is empty %}
+                                    {% else %}
+                                        {% for weapon in weapons %}
+                                            {% if weapon.name is null %}
+                                            {% else %}
+                                                    <button id="{{weapon.name}}"
+                                                            onclick="if(confirm('Utiliser cette arme ?'))
+                                                                    {location.href='/combat/useweapon/{{ weapon.name }}/{{ path[3] }}/{{ path[2] }}'}"
+                                                            type="submit"
+                                                            name="{{weapon.name}}">
+                                                        {{weapon.name | capitalize}}
+                                                        <img src="/assets/images/sword.png" alt="sword" class="logoStats">
+                                                        <span class="statInBar">{{ weapon.attack }}</span>
+                                                    </button>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
                                 </div>
 
                                 <div id="displayedItems" class="displayedBar">
-                                    <button>Potion</button>
-                                    <button>Key</button>
+                                    {% if potions is empty %}
+                                    {% else %}
+                                        {% for potion in potions %}
+                                            {% if potion.name is null %}
+                                            {% else %}
+                                                    <button onclick="if(confirm('Utiliser cette potion ?'))
+                                                    {location.href='/quest/usepotion/{{ hero.id }}'}" type="submit"
+                                                            name="{{potion.name}}">{{potion.name|capitalize}}</button>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
                                 </div>
 
-                                <div id="weaponStats">
-                                    <span class="itemInBar">Axe</span>
-                                    <img src="../assets/images/sword.png" alt="sword" class="logoStats">
-                                    <span class="statInBar">20</span>
+                                <!--<div id="weaponStats">
+                                    {% for weapon in weapons %}
+                                    <span class="itemInBar">{{ weapon.name | capitalize }}</span>
+                                    <img src="/assets/images/sword.png" alt="sword" class="logoStats">
+                                    <span class="statInBar">{{ weapon.attack }}</span>
                                     <button id="attack">Attack</button>
-                                </div>
-
+                                    {% endfor %}
+                                </div>-->
                             </div>
-
-
-                            <progress id="healthUser" value="70" max="100"></progress>
+                            <progress id="healthUser" value="{{hero.health}}" max="{{ heroMaxHealth }}"></progress>
                         </div>
                     </div>
                 </div>

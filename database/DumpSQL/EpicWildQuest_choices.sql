@@ -40,7 +40,7 @@ CREATE TABLE `choices` (
 
 LOCK TABLES `choices` WRITE;
 /*!40000 ALTER TABLE `choices` DISABLE KEYS */;
-INSERT INTO `choices` VALUES (1,'Je vais voir ce qu’il se passe.',1,3,'enigma/enigma1'),(2,'Je préfère me rendormir.',1,2,'yourDead/end'),(3,'Je passe par la forêt.',5,6,'quest/story'),(4,'Je passe par le marécage',5,7,'quest/story'),(5,'Se battre',7,0,'combat/fight'),(6,'Se battre',6,0,'combat/fight');
+INSERT INTO `choices` VALUES (1,'Je vais voir ce qu’il se passe.',1,3,'enigma/enigma1'),(2,'Je préfère me rendormir.',1,2,'yourDead/end'),(3,'Je passe par la forêt.',5,6,'quest/story'),(4,'Je passe par le marécage',5,7,'quest/story'),(5,'Se battre',7,2,'combat/fight'),(6,'Se battre',6,1,'combat/fight');
 /*!40000 ALTER TABLE `choices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-05 13:51:00
+-- Dump completed on 2019-11-12  9:04:23
