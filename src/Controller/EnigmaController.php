@@ -62,14 +62,14 @@ class EnigmaController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $answer = $_POST['answer'];
             $answer = strtolower($answer);
-            if ($_SESSION["answer1"] >= 3) {
-                header('Location: ../../../quest/end/4');
-                return true;
-            }
+            $_SESSION["answer1"] ++;
             if ($answer != self::ENIGMA1_ANSWER) {
-                $_SESSION["answer1"] ++;
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
-                return true;
+                if ($_SESSION["answer1"] >= 3) {
+                    header('Location: ../../../quest/end/4');
+                } else {
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    return true;
+                }
             } else {
                 $id += 2;
                 header("Location: ../../../quest/story/$id/$idHero");

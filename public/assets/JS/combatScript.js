@@ -2,6 +2,7 @@ const displayWeapons = document.getElementById("displayedWeapons");
 const itemsDisplayer = document.getElementById("itemsDisplayer");
 const displayItems = document.getElementById("displayedItems");
 const weaponsDisplayer = document.getElementById("weaponsDisplayer");
+const weaponStats = document.getElementById("weaponStats");
 
 // Displays the weapon list
 document.getElementById("weaponsDisplayer").addEventListener("click", displayedWeapons);
@@ -18,6 +19,13 @@ function displayedItems()
         displayItems.classList.toggle("displayB");
         weaponsDisplayer.classList.toggle("displayN");
 }
+
+//Displays the chosen weapon stats
+/*document.getElementById("weaponStats").addEventListener("click", displayedWeaponStats);
+function displayedWeaponStats()
+{
+        weaponStats.classList.toggle("displayB");
+}*/
 
 
 

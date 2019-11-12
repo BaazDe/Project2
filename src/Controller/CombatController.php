@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ChoiceManager;
+use App\Model\CreaturesManager;
 use App\Model\HeroesManager;
 use App\Model\StoryManager;
 use App\Model\InventoryManager;
@@ -21,7 +22,7 @@ class CombatController extends AbstractController
         return $parts;
     }
 
-    public function fight($id, $idHero)
+    public function fight($idCreature, $idHero)
     {
         //calling InventoryManager
         $itemsManager = new InventoryManager();
@@ -34,18 +35,49 @@ class CombatController extends AbstractController
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
-        $storiesManager = new StoryManager();
-        $story = $storiesManager->selectOneById($id);
-        $choicesManager = new ChoiceManager();
-        $choices = $choicesManager->selectResponse($id);
+        $hero = $heroesManager->selectOneById($idHero);
+        //calling CreaturesManager
+        $creaturesManager = new CreaturesManager();
+        $creature = $creaturesManager->selectOneById($idCreature);
+
         return $this->twig->render('Combat/combat.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
             'spells'=>$spells,
             'heroes'=>$heroes,
-            'story' => $story,
-            'choices' => $choices,
+            'hero'=>$hero,
+            'creature'=> $creature,
+            'heroMaxHealth' => HeroesManager::MAX_HEALTH[$idHero],
+            'creatureMaxHealth' => CreaturesManager::MAX_HEALTH[$idCreature],
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function useWeapon($weaponName, $idHero, $idCreature)
+    {
+        $weaponsManager = new InventoryManager();
+        //getting weapon ATTACK
+        $weaponAttack = $weaponsManager->getWeaponAttack($weaponName, $idHero);
+
+        $creatureManager = new CreaturesManager();
+        //getting creature ATTACK
+        $creatureAttack = $creatureManager->getCreatureAttack($idCreature);
+
+        $heroManager = new HeroesManager();
+        //getting hero ATTACK
+        $heroAttack = $heroManager->getHeroAttack($idHero);
+
+        // hero's damage formula
+        $heroTotalAttack = $heroAttack+$weaponAttack;
+        $min = intval(($heroTotalAttack*0.1));
+        $max = intval(($heroTotalAttack*0.3));
+        $heroDamage = rand($min, $max);
+        //Creature takes damage
+        $creatureManager->setHealthFromAttack($idCreature, $heroDamage);
+
+        //Hero takes damage
+        $heroManager->setHealthFromAttack($idHero, $creatureAttack);
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
