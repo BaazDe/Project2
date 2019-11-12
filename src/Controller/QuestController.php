@@ -78,8 +78,6 @@ class QuestController extends AbstractController
     {
         $storiesManager = new StoryManager();
         $story = $storiesManager->selectOneById($id);
-        return $this->twig->render('Story/dead.html.twig', [
-            'stories' => $story
-        ]);
+        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);        
     }
 }
