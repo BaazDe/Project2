@@ -9,8 +9,6 @@ use App\Model\InventoryManager;
 use App\Model\LocationManager;
 use App\Model\StoryManager;
 
-
-
 class EnigmaController extends AbstractController
 {
 
