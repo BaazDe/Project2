@@ -27,13 +27,11 @@
             <p class="code2">ERVMH NV ELRI</p>
             <br>
 
-        <form action="<?= htmlspecialchars();?>" method= "POST">
-            <label  for="answer"></label>
-            <textarea  id="answer"  placeholder="Réponse"></textarea>
-            <?= $errors["errorAnswer"] ?>
-            <?= $good["goodAnswer"] ?>
+        <form action="../../../enigma/sendAnswer/{{ path[2] }}/{{ path[3] }}" method="POST">
+            <label for="answer"></label>
+            <textarea id="answer" placeholder="Réponse" name="answer"></textarea>
             <br>
-            <a href="../../../quest/story/1/1"><input type="button" value="Valider" onclick="compteARebours();"></a>
+            <input type="submit" value="Valider">
         </form>
         </div>
     </div>
@@ -41,53 +39,51 @@
     <!---  bagScript showing in mobile --->
     <div id="bagScript">
         <p>Bag</p>
-        <form action="" method="post">
-            <ul>
-                {% for hero in heroes %}
-                    {% if path[3] == hero.id %}
-                        <!-- displays weapons -->
-                        {% if weapons is empty %}
-                        {% else %}
-                            {% for weapon in weapons %}
-                                {% if weapon.name is null %}
-                                {% else %}
-                                    <li>
-                                        <button>{{weapon.name}}</button>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                        <!-- end display weapons -->
-                        <!-- displays potions -->
-                        {% if potions is empty %}
-                        {% else %}
-                            {% for potion in potions %}
-                                {% if potion.name is null %}
-                                {% else %}
-                                    <li>
-                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.reload();}" type="submit"  name="{{potion.name}}">{{potion.name}}</button>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                        <!-- end display potions -->
-                        <!-- displays spells -->
-                        {% if spells is empty %}
-                        {% else %}
-                            {% for spell in spells %}
-                                {% if spell.name is null %}
-                                {% else %}
-                                    <li>
-                                        <button>{{spell.name}}</button>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                        <!-- end display spells -->
+        <ul>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    <!-- displays weapons -->
+                    {% if weapons is empty %}
+                    {% else %}
+                        {% for weapon in weapons %}
+                            {% if weapon.name is null %}
+                            {% else %}
+                                <li>
+                                    <button>{{weapon.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
-                {% endfor %}
-            </ul>
-        </form>
+                    <!-- end display weapons -->
+                    <!-- displays potions -->
+                    {% if potions is empty %}
+                    {% else %}
+                        {% for potion in potions %}
+                            {% if potion.name is null %}
+                            {% else %}
+                                <li>
+                                    <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <!-- end display potions -->
+                    <!-- displays spells -->
+                    {% if spells is empty %}
+                    {% else %}
+                        {% for spell in spells %}
+                            {% if spell.name is null %}
+                            {% else %}
+                                <li>
+                                    <button>{{spell.name}}</button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <!-- end display spells -->
+                {% endif %}
+            {% endfor %}
+        </ul>
         {% for hero in heroes %}
             {% if path[3] == hero.id %}
                 <ul id="statsScript">

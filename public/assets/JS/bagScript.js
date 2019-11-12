@@ -4,24 +4,25 @@ const main = document.getElementById("main");
 const history = document.getElementById("history");
 const responses = document.getElementById("responses");
 const enigma = document.getElementById("enigma");
+const displayBag = document.getElementById("bagScript");
 
-let displayed = false;
+if (history !== null) {
+    bagIcon.addEventListener("click", bagScript);
+    function bagScript()
+    {
+            displayBag.classList.toggle("script");
+            history.classList.toggle("script");
+            responses.classList.toggle("script");
+            main.classList.toggle("script");
+    }
+}
 
-
-bagIcon.addEventListener("click", bagScript);
-function bagScript(){
-    if (displayed === false){
-        document.getElementById("bagScript").classList.add("script");
-        history.classList.add("script");
-        responses.classList.add("script");
-        main.classList.add("script");
-        enigma.classList.add("blur");
-        displayed = true;
-    } else {
-        document.getElementById("bagScript").classList.remove("script");
-        main.classList.remove("script");
-        history.classList.remove("script");
-        responses.classList.remove("script");
-        displayed = false;
+if (enigma !==null) {
+    bagIcon.addEventListener("click", bagScriptEnigma);
+    function bagScriptEnigma()
+    {
+        displayBag.classList.toggle("script");
+        enigma.classList.toggle("script");
+        main.classList.toggle("script");
     }
 }
