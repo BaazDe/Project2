@@ -33,7 +33,7 @@ class EnigmaController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-        $enigmasManager = new EnigmasManager();
+        $enigmasManager = new storyManager();
         $enigma = $enigmasManager->selectOneById($id);
         $storiesManager = new StoryManager();
         $story = $storiesManager->selectOneById($id);
