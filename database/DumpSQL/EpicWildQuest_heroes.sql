@@ -28,6 +28,7 @@ CREATE TABLE `heroes` (
   `attack` int(11) NOT NULL,
   `gold` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `maxHealth` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `heroes` (
 
 LOCK TABLES `heroes` WRITE;
 /*!40000 ALTER TABLE `heroes` DISABLE KEYS */;
-INSERT INTO `heroes` VALUES ('warrior',130,150,20,1),('mage',80,200,20,2),('rogue',100,165,40,3);
+INSERT INTO `heroes` VALUES ('warrior',130,150,20,1,130),('mage',-20,200,20,2,80),('rogue',100,165,40,3,100);
 /*!40000 ALTER TABLE `heroes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-05 13:51:00
+-- Dump completed on 2019-11-12  9:04:23

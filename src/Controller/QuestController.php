@@ -12,15 +12,7 @@ use App\Model\StoryManager;
 class QuestController extends AbstractController
 {
 
-    public function requestPath()
-    {
-        $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        $scriptName = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
-        $parts = array_diff_assoc($requestUri, $scriptName);
-        if (empty($parts)) {
-            return '/';
-        }
-        return $parts;
+   return $parts;
     }
 
     public function story($id, $idHero)
@@ -38,10 +30,6 @@ class QuestController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-        if (isset($_POST['potion'])) {
-            $itemsManager->usePotion();
-        }
-
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
@@ -66,5 +54,24 @@ class QuestController extends AbstractController
            'picture'=> $location['picture'],
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function usePotion($idHero)
+    {
+        $potionsManager = new InventoryManager();
+        $heroManager = new HeroesManager();
+        $heroManager->setHealthFromPotion($idHero);
+        //delete this potion from inventory
+        $potionsManager->deletePotion();
+        //header on the page where the potion was used
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    // send to dead page
+    public function end($id)
+    {
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);
     }
 }

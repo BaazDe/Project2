@@ -1,37 +1,34 @@
+const displayWeapons = document.getElementById("displayedWeapons");
+const itemsDisplayer = document.getElementById("itemsDisplayer");
+const displayItems = document.getElementById("displayedItems");
+const weaponsDisplayer = document.getElementById("weaponsDisplayer");
+const weaponStats = document.getElementById("weaponStats");
+
 // Displays the weapon list
-let displayed = false;
-let displayed2 = false;
 document.getElementById("weaponsDisplayer").addEventListener("click", displayedWeapons);
-
-
-function displayedWeapons() {
-    if (displayed === false){
-        document.getElementById("displayedWeapons").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "none";
-        displayed = true;
-    } else {
-        document.getElementById("displayedWeapons").style.display= "none";
-        document.getElementById("itemsDisplayer").style.display= "block";
-        displayed = false;
-    }
+function displayedWeapons()
+{
+        displayWeapons.classList.toggle("script");
+        itemsDisplayer.classList.toggle("displayN");
 }
 
 //Displays the item list
 document.getElementById("itemsDisplayer").addEventListener("click", displayedItems);
-function displayedItems() {
-    if (displayed === false){
-        document.getElementById("displayedItems").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "block";
-        document.getElementById("weaponsDisplayer").style.display= "none";
-        displayed = true;
-    } else {
-        document.getElementById("displayedItems").style.display= "block";
-        document.getElementById("itemsDisplayer").style.display= "block";
-        document.getElementById("weaponsDisplayer").style.display= "block";
-        document.getElementById("displayedItems").style.display= "none";
-        displayed = false;
-    }
+function displayedItems()
+{
+        displayItems.classList.toggle("displayB");
+        weaponsDisplayer.classList.toggle("displayN");
 }
+
+//Displays the chosen weapon stats
+/*document.getElementById("weaponStats").addEventListener("click", displayedWeaponStats);
+function displayedWeaponStats()
+{
+        weaponStats.classList.toggle("displayB");
+}*/
+
+
+
 
 // displays weapon stats
 /*document.getElementById("axe").addEventListener("click", displayedStats);
