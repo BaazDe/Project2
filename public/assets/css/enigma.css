@@ -75,43 +75,41 @@ input{
     width: 100%;
 }
 
-@media screen and (max-width: 800px) {
-    * {
+@media screen and (max-width: 800px){
+    *{
         margin: 0;
         padding: 0;
     }
 
-    body {
+    body{
         background-position: center;
     }
 
-    #enigma {
+    #enigma{
         flex-direction: column;
         height: 80%;
     }
-
-    .element {
+    .element{
         font-size: 15px;
         max-height: 200px;
         overflow-y: scroll;
     }
 
-    .element p {
+    .element p{
         line-height: 20px;
     }
 
-    .element2 {
+    .element2{
         margin: auto;
         padding: 1em;
         width: 100%;
     }
-
-    #answer {
+    #answer{
         padding: 8px;
     }
 
-    .clue, #answer, input {
-        width: 40%;
+    .clue, #answer, input{
+        width: 100%;
         margin: auto;
     }
 }
