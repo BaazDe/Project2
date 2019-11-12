@@ -7,8 +7,17 @@
 button:hover{
     cursor: pointer;
 }
+
+.picture{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -99;
+}
+
+
 body{
-    background-image: url("../images/chateau.png");
+
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Revalia', cursive;

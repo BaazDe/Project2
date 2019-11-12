@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\BackgroundManager;
 use App\Model\ChoiceManager;
 use App\Model\HeroesManager;
 use App\Model\LocationManager;
@@ -37,12 +38,6 @@ class QuestController extends AbstractController
         $spells = $itemsManager->selectSpells($idHero);
         //fetch potions
         $potions = $itemsManager->selectPotions($idHero);
-
-        //TODO: bug -> if click confirm is false, function is still running
-        if (isset($_POST['potion'])) {
-            $itemsManager->usePotion();
-        }
-
         //calling HeroesManager
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
@@ -51,11 +46,11 @@ class QuestController extends AbstractController
         $choicesManager = new ChoiceManager();
         $choices = $choicesManager->selectResponse($id);
 
+
         //display locations
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
-        $location=$locationsManager->selectOneById($locationId);
-        $location=$location['name'];
+        $location = $locationsManager->selectOneById($locationId);
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -63,8 +58,28 @@ class QuestController extends AbstractController
             'heroes'=>$heroes,
             'story' => $story,
             'choices' => $choices,
-            'locations' =>$location,
+            'location' =>$location,
+           'picture'=> $location['picture'],
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function usePotion($idHero)
+    {
+        $potionsManager = new InventoryManager();
+        $heroManager = new HeroesManager();
+        $heroManager->setHealthFromPotion($idHero);
+        //delete this potion from inventory
+        $potionsManager->deletePotion();
+        //header on the page where the potion was used
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    // send to dead page
+    public function end($id)
+    {
+        $storiesManager = new StoryManager();
+        $story = $storiesManager->selectOneById($id);
+        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);
     }
 }
