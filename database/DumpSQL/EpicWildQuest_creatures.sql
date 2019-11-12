@@ -38,7 +38,7 @@ CREATE TABLE `creatures` (
 
 LOCK TABLES `creatures` WRITE;
 /*!40000 ALTER TABLE `creatures` DISABLE KEYS */;
-INSERT INTO `creatures` VALUES (1,'Wolf',130,70,5),(2,'Frogman',170,90,10);
+INSERT INTO `creatures` VALUES (1,'loup',130,20,5),(2,'frogman',-21,30,10);
 /*!40000 ALTER TABLE `creatures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-05 13:51:00
+-- Dump completed on 2019-11-12  9:04:23

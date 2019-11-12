@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
 
 body {
-   
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -22,6 +21,7 @@ main{
     border-radius: 20px;
     margin: 0 auto;
     padding: 3%;
+    transition-duration: 1s;
 }
 #history p{
     float: right;
@@ -37,6 +37,7 @@ main{
     width: 100%;
     float: right;
     justify-content: space-around;
+    transition-duration: 1s;
 }
 .response{
     text-decoration: none;
@@ -63,6 +64,7 @@ main{
 .response:hover{
     background: radial-gradient(100% 100% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
+
 @media screen and (max-width: 640px){
     #history{
         display: flex;
