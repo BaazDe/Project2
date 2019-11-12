@@ -50,8 +50,6 @@ class QuestController extends AbstractController
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
-
-        // Path
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
             'weapons'=>$weapons,
@@ -80,6 +78,6 @@ class QuestController extends AbstractController
     {
         $storiesManager = new StoryManager();
         $story = $storiesManager->selectOneById($id);
-        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);
+        return $this->twig->render('Story/dead.html.twig', ['story'=>$story]);        
     }
 }

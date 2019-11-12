@@ -11,6 +11,8 @@ use App\Model\StoryManager;
 
 class EnigmaController extends AbstractController
 {
+
+    const ENIGMA1_ANSWER = "viens me voir";
     public function requestPath()
     {
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
@@ -53,5 +55,27 @@ class EnigmaController extends AbstractController
             'locations' =>$location,
             'path'=>$this->requestPath()
         ]);
+    }
+
+    public function sendAnswer($id, $idHero): bool
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $answer = $_POST['answer'];
+            $answer = strtolower($answer);
+            $_SESSION["answer1"] ++;
+            if ($answer != self::ENIGMA1_ANSWER) {
+                if ($_SESSION["answer1"] >= 3) {
+                    header('Location: ../../../quest/end/4');
+                } else {
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    return true;
+                }
+            } else {
+                $id += 2;
+                header("Location: ../../../quest/story/$id/$idHero");
+                return true;
+            }
+        }
+        return true;
     }
 }

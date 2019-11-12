@@ -27,12 +27,11 @@
             <p class="code2">ERVMH NV ELRI</p>
             <br>
 
-        <form action=" " method= "POST">
-            <label  for="answer"></label>
-            <textarea  id="answer"  placeholder="Réponse"></textarea>
-            <?= $errors["errorMessage"] ?>
+        <form action="../../../enigma/sendAnswer/{{ path[2] }}/{{ path[3] }}" method="POST">
+            <label for="answer"></label>
+            <textarea id="answer" placeholder="Réponse" name="answer"></textarea>
             <br>
-            <input type="button" value="Valider">
+            <input type="submit" value="Valider">
         </form>
         </div>
     </div>
