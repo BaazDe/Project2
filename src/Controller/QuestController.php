@@ -15,6 +15,7 @@ class QuestController extends AbstractController
     public function requestPath()
     {
         $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+
         $scriptName = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $parts = array_diff_assoc($requestUri, $scriptName);
         if (empty($parts)) {
