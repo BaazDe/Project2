@@ -64,7 +64,7 @@ nav {
 
 }
 
-#bagScript{
+#bagScript, #bagScriptEnigma{
     position: absolute;
     background-color: aliceblue;
     width: 70%;
@@ -133,7 +133,7 @@ nav {
     margin-top: 0.5%;
 }
 
-#bagIcon, #bagScript, #statsScript{
+#bagIcon, #bagScript, #statsScript, #bagScriptEnigma{
     display: none;
 }
 
@@ -142,6 +142,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition-duration: 1s;
 }
 
 .restartGame{
@@ -171,6 +172,11 @@ main{
 .reset{
     margin-bottom: 15%;
 }
+
+.actionBtn button {
+    background: radial-gradient(90.63% 90.63% at 50% 50%, rgba(255, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
 @media screen and (max-width: 800px){
     .content{
         grid-template-columns: auto;
