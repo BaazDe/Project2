@@ -15,12 +15,14 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+
 .cards{
     display: flex;
     justify-content: space-around;
     height: 50%;
     width: 100%;
 }
+
 .card{
     display: flex;
     flex-direction: column;
@@ -29,17 +31,20 @@ body {
     justify-content:  space-evenly;
     min-width: calc(100vw/5);
 }
+
 .card button{
     width: 60%;
     font-family: 'Revalia', cursive;
     padding-bottom: 4px;
 }
+
 .card button a{
     text-decoration: none;
     color: #FFFFFF;
     display: block;
     line-height: 100%;
 }
+
 #card-warrior{
     background: radial-gradient(70.63% 70.63% at 50% 50%, rgba(166, 166, 166, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
     border: 2px solid #DDCBA7;
@@ -47,6 +52,7 @@ body {
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 30px;
 }
+
 #card-mage{
     background: radial-gradient(81.25% 81.25% at 50% 50%, rgba(0, 163, 255, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
     border: 2px solid #D3BB8D;
@@ -54,6 +60,7 @@ body {
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 30px;
 }
+
 #card-rogue{
     background: radial-gradient(90.63% 90.63% at 50% 50%, rgba(255, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
     border: 2px solid #DDCBA7;
@@ -61,35 +68,43 @@ body {
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 30px;
 }
+
 h3{
     color: #FFFFFF;
-    font-size: 2.1em;
+    font-size: 2em;
     text-align: center;
-    width: 50%;
     padding: 2rem;
     background: radial-gradient(90.35% 90.35% at 50% 50%, rgba(0, 163, 255, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
     border: 2px solid #FFFFFF;
     border-radius: 50px;
 }
+
 h4{
     font-size: 30px;
     color: #FFFFFF;
     text-transform: capitalize;
 }
+
 .stats{
     background-color: rgba(255, 255, 255, 0.3);
     padding: 0.5em;
     border-radius: 15px;
-    width: 90%;
     height: 40%;
-    font-size: 13px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+
+.stats li{
+    font-size: 20px;
+    margin: auto;
+    padding: auto;
+}
+
 .stats img{
     height: 1.5rem;
 }
+
 .warrior-btn{
     width: 80%;
     background: #2E2E2E;
@@ -97,7 +112,9 @@ h4{
     border-radius: 15px;
     height: 2em;
     color: #FFFFFF;
+    font-size: 25px;
 }
+
 .mage-btn{
     width: 80%;
     background: #020064;
@@ -105,7 +122,9 @@ h4{
     border-radius: 15px;
     height: 2em;
     color: #FFFFFF;
+    font-size: 25px;
 }
+
 .rogue-btn{
     width: 80%;
     background: #BF0000;
@@ -113,25 +132,38 @@ h4{
     border-radius: 15px;
     height: 2em;
     color: #FFFFFF;
+    font-size: 25px;
+
 }
-@media screen and (max-width: 640px){
-    h3{
-        width: 60%;
-        font-size: 1em;
-        padding: 0.3em;
+
+@media screen and (max-width: 1105px){
+    .stats li{
+        font-size: 15px;
     }
+}
+
+@media screen and (max-width: 890px){
+    h3{
+        font-size: 1.5em;
+        padding: 20px;
+        margin: 70px 40px 0 40px;
+    }
+
     .cards{
         flex-direction: column;
         align-items: center;
         height: 80%;
         justify-content: center;
     }
+
     .stats, button{
         display: none;
     }
+
     .stats{
         transition: all 100ms;
     }
+
     .card{
         height: calc(100%/7);
         width: calc(100%/1.3);

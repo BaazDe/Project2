@@ -59,7 +59,7 @@ class QuestController extends AbstractController
             'story' => $story,
             'choices' => $choices,
             'location' =>$location,
-           'picture'=> $location['picture'],
+            'picture'=> $location['picture'],
             'path'=>$this->requestPath()
         ]);
     }
