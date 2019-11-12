@@ -7,6 +7,7 @@ use App\Model\HeroesManager;
 use App\Model\InventoryManager;
 use App\Model\LocationManager;
 use App\Model\StoryManager;
+use App\Model\EnigmasManager;
 
 class EnigmaController extends AbstractController
 {
