@@ -92,11 +92,10 @@ input{
     .element2{
         margin: auto;
         padding: 1em;
-        width: 40%;
+        width: 100%;
     }
-
-    .clue {
-        padding: 8px 0;
+    #answer{
+        padding: 8px;
     }
 }
 
