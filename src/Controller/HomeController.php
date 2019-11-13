@@ -1,26 +1,30 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aurelwcs
- * Date: 08/04/19
- * Time: 18:40
- */
+
 
 namespace App\Controller;
 
+use App\Model\CreaturesManager;
+use App\Model\HeroesManager;
+use App\Model\InventoryManager;
+
 class HomeController extends AbstractController
 {
-
-    /**
-     * Display home page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $_SESSION["answer1"]=0;
+        return $this->twig->render('Begin/begin.html.twig');
+    }
+
+    public function choose()
+    {
+        $heroesManager = new HeroesManager();
+        $creatureManager = new CreaturesManager();
+        // reset stats
+        $heroesManager->resetHeroes();
+        $creatureManager->resetCreatures();
+        $heroes = $heroesManager->selectAll();
+        return $this->twig->render('Begin/chooseHero.html.twig', [
+            'heroes' => $heroes
+        ]);
     }
 }
