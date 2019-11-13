@@ -8,9 +8,7 @@
 
 {% block main %}
  <!-- TODO : form heading to next story if enigma is solved -->
-{% for hero in heroes %}
-{% if path[3] == hero.id %}
-    <div id="enigma-{{ hero.name }}">
+    <div id="enigma">
         <div class="element"><p>{{ enigma.story }}</p></div>
         <div class="element2">
             <p class="clue">
@@ -35,8 +33,6 @@
         </form>
         </div>
     </div>
-{% endif %}
-{% endfor %}
 
     <!---  bagScript showing in mobile --->
     <div id="bagScript">
