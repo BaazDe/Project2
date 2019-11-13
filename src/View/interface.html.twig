@@ -6,6 +6,17 @@
 
 
     <!-- body -->
+{% block background %}
+    {% if path[1]=='fight' and path[2]==1 %}
+        <img class="picture" src="/assets/images/foret.jpg" alt=" ">
+    {% elseif path[1]=='fight' and path[2]==2 %}
+        <img class="picture" src="/assets/images/swamp.jpg" alt=" ">
+    {% else %}
+        <img class="picture" src="/assets/images/{{picture}}" alt=" ">
+    {% endif %}
+{% endblock background %}
+
+
     <div class="content">
         <nav>
             {% for hero in heroes %}
@@ -77,6 +88,17 @@
                 <button id="restartButton" class="restartGame-{{ hero.name }}" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
             {% endif %}
             {% endfor %}
+
+            <h4>
+                {% if path[1]=='fight' and path[2]==1 %}
+                Forest
+                {% elseif path[1]=='fight' and path[2]==2 %}
+                Swamp
+                {% else %}
+                {{ locations }}
+                {% endif %}
+            </h4>
+                <button class="restartGame" onclick="window.location.href = '/';"><p class="reset">Restart</p></button>
         </div>
 
         <main id="main">

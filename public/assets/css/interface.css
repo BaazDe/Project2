@@ -10,12 +10,20 @@ button:hover{
     cursor: pointer;
 }
 
+.picture{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -99;
+}
+
+
 body{
-    background-image: url("../images/tavern.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Revalia', cursive;
 }
+
 .content{
     display: grid;
     grid-template-columns: 15% auto;

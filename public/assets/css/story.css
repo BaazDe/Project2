@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
 
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 main{
     justify-content: space-around;
 }
+
 .backgroundImg{
     width: 100%;
 }
+
 #history{
     width: 70%;
     display: flex;
@@ -18,6 +26,7 @@ main{
     padding: 3%;
     transition-duration: 1s;
 }
+
 #history p{
     float: right;
     height: 100%;

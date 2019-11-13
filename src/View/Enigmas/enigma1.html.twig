@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/assets/css/enigma.css">
 {% endblock %}
 
-{% block title %}Story{% endblock title %}
+{% block title %}Enigma{% endblock title %}
 
 {% block main %}
  <!-- TODO : form heading to next story if enigma is solved -->
@@ -19,14 +19,17 @@
                 <br>Z <- A
             </p>
             <br>
+            <div id="secretCode">
             <p class="code">Code secret :</p>
             <br>
             <p class="code2">ERVMH NV ELRI</p>
+            </div>
             <br>
 
-        <form action="../../../enigma/sendAnswer/{{ path[2] }}/{{ path[3] }}" method="POST">
+            <form action="../../../enigma/sendAnswer/{{ path[2] }}/{{ path[3] }}" method="POST">
             <label for="answer"></label>
             <textarea id="answer" placeholder="Réponse" name="answer"></textarea>
+            <br>
             <br>
             <input type="submit" value="Valider">
         </form>
@@ -93,6 +96,5 @@
             {% endif %}
         {% endfor %}
     </div>
-
     <script src="/assets/JS/bagScript.js"></script>
 {% endblock %}

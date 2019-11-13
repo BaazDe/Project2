@@ -3,11 +3,11 @@
 
 namespace App\Controller;
 
-use App\Model\EnigmasManager;
 use App\Model\HeroesManager;
 use App\Model\InventoryManager;
 use App\Model\LocationManager;
 use App\Model\StoryManager;
+use App\Model\EnigmasManager;
 
 class EnigmaController extends AbstractController
 {
@@ -41,18 +41,20 @@ class EnigmaController extends AbstractController
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
 
+        //display locations
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
         $location=$location['name'];
         return $this->twig->render('Enigmas/enigma1.html.twig', [
             'potions' => $potions,
-            'weapons'=>$weapons,
-            'spells'=>$spells,
+            'weapons' => $weapons,
+            'spells' => $spells,
             'story' => $story,
             'enigma' => $enigma,
             'heroes'=>$heroes,
-            'locations' =>$location,
+            'location' =>$location,
+            'picture'=> $location['picture'],
             'path'=>$this->requestPath()
         ]);
     }
@@ -63,13 +65,13 @@ class EnigmaController extends AbstractController
             $answer = $_POST['answer'];
             $answer = strtolower($answer);
             $_SESSION["answer1"] ++;
-            if ($_SESSION["answer1"] >= 3) {
-                header('Location: ../../../quest/end/4');
-                return true;
-            }
             if ($answer != self::ENIGMA1_ANSWER) {
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
-                return true;
+                if ($_SESSION["answer1"] >= 3) {
+                    header('Location: ../../../quest/end/4');
+                } else {
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    return true;
+                }
             } else {
                 $id += 2;
                 header("Location: ../../../quest/story/$id/$idHero");

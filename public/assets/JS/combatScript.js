@@ -19,6 +19,13 @@ function displayedItems()
         weaponsDisplayer.classList.toggle("displayN");
 }
 
+//Displays the chosen weapon stats
+/*document.getElementById("weaponStats").addEventListener("click", displayedWeaponStats);
+function displayedWeaponStats()
+{
+        weaponStats.classList.toggle("displayB");
+}*/
+
 
 
 
