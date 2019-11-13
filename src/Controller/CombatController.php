@@ -43,7 +43,7 @@ class CombatController extends AbstractController
         $heroHealth = $heroesManager->getCurrentHealth($idHero);
         $creatureHealth = $creaturesManager->getCurrentHealth($idCreature);
         if ($heroHealth <= 0) {
-            header("Location: ../../../quest/end/$idHero");
+            header("Location: ../../../quest/end/8");
         } elseif ($creatureHealth <= 0) {
             header("Location: ../../../buy/buynow");
         } else {
