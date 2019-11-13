@@ -11,7 +11,7 @@ main {
     height: 94vh;
 }
 
-#enigma-warrior, #enigma-mage, #enigma-rogue{
+#enigma{
     font-family: 'Revalia', cursive;
     margin: 5%;
     width: 90%;
@@ -104,6 +104,7 @@ input{
         padding: 1em;
         width: 100%;
     }
+    
     #answer{
         padding: 8px;
     }
