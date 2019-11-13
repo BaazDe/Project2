@@ -15,6 +15,7 @@ button:hover{
     width: 100%;
     position: absolute;
     z-index: -99;
+    object-fit: cover;
 }
 
 
@@ -27,7 +28,7 @@ body{
 .content{
     display: grid;
     grid-template-columns: 15% auto;
-    grid-template-rows: 40px auto;
+    grid-template-rows: 50px auto;
     grid-template-areas:
             "aside location"
             "aside main";
@@ -131,6 +132,8 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 10px 3%;
+    align-items: center;
 }
 
 .location h4{
@@ -150,6 +153,7 @@ main{
     flex-direction: column;
     justify-content: center;
     transition-duration: 1s;
+    height: calc(100vh - 70px);
 }
 
 .restartGame-mage, .restartGame-warrior, .restartGame-rogue{
@@ -172,7 +176,7 @@ main{
 @media screen and (max-width: 800px){
     .content{
         grid-template-columns: auto;
-        grid-template-rows: 40px auto;
+        grid-template-rows: 70px auto;
         grid-template-areas:
                 "location"
                 "main";
