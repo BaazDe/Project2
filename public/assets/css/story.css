@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
 
-main{
-    justify-content: space-around;
-}
-
 .backgroundImg{
     width: 100%;
 }
@@ -19,6 +15,7 @@ main{
     margin: 0 auto;
     padding: 3%;
     transition-duration: 1s;
+    max-height: 60%;
 }
 
 #history p{
@@ -29,6 +26,9 @@ main{
     margin: 1em auto;
     font-size: 1em;
     color: #FFFFFF;
+    overflow: auto;
+    max-height: 95%;
+    line-height: 20px;
 }
 #responses{
     display: flex;
@@ -36,6 +36,7 @@ main{
     float: right;
     justify-content: space-around;
     transition-duration: 1s;
+    margin-top: 8%;
 }
 
 .response-mage, .response-warrior, .response-rogue{
