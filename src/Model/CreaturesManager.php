@@ -17,7 +17,7 @@ class CreaturesManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->exec("UPDATE $this->table SET health = 130 where id = 1");
-        $statement2 = $this->pdo->exec("UPDATE $this->table SET health = 170");
+        $statement2 = $this->pdo->exec("UPDATE $this->table SET health = 170 where id = 2");
         return $statement.$statement2;
     }
 
