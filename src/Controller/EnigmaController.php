@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Controller;
 
 use App\Model\HeroesManager;
@@ -11,7 +9,6 @@ use App\Model\EnigmasManager;
 
 class EnigmaController extends AbstractController
 {
-
     const ENIGMA1_ANSWER = "viens me voir";
     public function requestPath()
     {
@@ -23,7 +20,6 @@ class EnigmaController extends AbstractController
         }
         return $parts;
     }
-
     public function enigma1($id, $idHero)
     {
         //calling InventoryManager
@@ -40,12 +36,10 @@ class EnigmaController extends AbstractController
         $story = $storiesManager->selectOneById($id);
         $heroesManager = new HeroesManager();
         $heroes = $heroesManager->selectAll();
-
         //display locations
         $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
         $location=$locationsManager->selectOneById($locationId);
-        $location=$location['name'];
         return $this->twig->render('Enigmas/enigma1.html.twig', [
             'potions' => $potions,
             'weapons' => $weapons,
@@ -58,7 +52,6 @@ class EnigmaController extends AbstractController
             'path'=>$this->requestPath()
         ]);
     }
-
     public function sendAnswer($id, $idHero): bool
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
