@@ -5,9 +5,13 @@ const restartButton = document.getElementById("restartButton");
 const inventoryBtnWarrior = document.querySelectorAll(".inventoryBtn-warrior");
 const inventoryBtnMage = document.querySelectorAll(".inventoryBtn-mage");
 const inventoryBtnRogue = document.querySelectorAll(".inventoryBtn-rogue");
-const enigmaWarrior = document.getElementById("enigma-warrior");
-const enigmaMage = document.getElementById("enigma-mage");
-const enigmaRogue = document.getElementById("enigma-rogue");
+
+const weaponsDisplayerWarrior = document.getElementById("weaponsDisplayer-warrior");
+const weaponsDisplayerMage = document.getElementById("weaponsDisplayer-mage");
+const weaponsDisplayerRogue = document.getElementById("weaponsDisplayer-rogue");
+const itemsDisplayerWarrior = document.getElementById("itemsDisplayer-warrior");
+const itemsDisplayerMage = document.getElementById("itemsDisplayer-mage");
+const itemsDisplayerRogue = document.getElementById("itemsDisplayer-rogue");
 
 console.log(restartButton.getAttribute('class'));
 
@@ -35,4 +39,5 @@ if (restartButton.getAttribute('class') === "restartGame-rogue") {
     inventoryBtnWarrior.forEach(function (element) {
         element.classList.add("color");
     });
-}  
+    weaponsDisplayerWarrior.classList.add("color");
+}

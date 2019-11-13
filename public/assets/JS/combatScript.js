@@ -1,7 +1,7 @@
-const displayWeapons = document.getElementById("displayedWeapons");
-const itemsDisplayer = document.getElementById("itemsDisplayer");
-const displayItems = document.getElementById("displayedItems");
 const weaponsDisplayer = document.getElementById("weaponsDisplayer");
+const itemsDisplayer = document.getElementById("itemsDisplayer");
+const displayWeapons = document.getElementById("displayedWeapons");
+const displayItems = document.getElementById("displayedItems");
 
 // Displays the weapon list
 document.getElementById("weaponsDisplayer").addEventListener("click", displayedWeapons);
