@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+header{
+    padding: 2%;
+}
+
 button:hover{
     cursor: pointer;
 }
@@ -154,6 +158,7 @@ main{
     justify-content: center;
     transition-duration: 1s;
     height: calc(100vh - 70px);
+    overflow: hidden;
 }
 
 .restartGame-mage, .restartGame-warrior, .restartGame-rogue{
@@ -165,8 +170,8 @@ main{
     font-family: 'Revalia', cursive;
     color: #FFFFFF;
     height: 30px;
-    margin: 5px auto;
-    padding: 0.3em;
+    margin: 5px 3%;
+    padding: 0.2em;
 }
 
 .reset{

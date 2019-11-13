@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Revalia&display=swap');
 
-main{
-    justify-content: space-around;
-}
-
 .backgroundImg{
     width: 100%;
 }
@@ -40,6 +36,7 @@ main{
     float: right;
     justify-content: space-around;
     transition-duration: 1s;
+    margin-top: 8%;
 }
 
 .response-mage, .response-warrior, .response-rogue{

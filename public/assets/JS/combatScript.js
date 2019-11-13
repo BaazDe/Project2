@@ -18,27 +18,3 @@ function displayedItems()
         displayItems.classList.toggle("displayB");
         weaponsDisplayer.classList.toggle("displayN");
 }
-
-//Displays the chosen weapon stats
-/*document.getElementById("weaponStats").addEventListener("click", displayedWeaponStats);
-function displayedWeaponStats()
-{
-        weaponStats.classList.toggle("displayB");
-}*/
-
-
-
-
-// displays weapon stats
-/*document.getElementById("axe").addEventListener("click", displayedStats);
-function displayedStats() {
-    if (displayed2 === false){
-        document.getElementById("weaponStats").style.display= "flex";
-        document.getElementById("displayedWeapons").style.display= "none";
-        displayed2 = true;
-    } else {
-        document.getElementById("displayedWeapons").style.display= "none";
-        document.getElementById("weaponStats").style.display= "none";
-        displayed2 = false;
-    }  */
-
