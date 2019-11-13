@@ -37,7 +37,7 @@ CREATE TABLE `locations` (
 
 LOCK TABLES `locations` WRITE;
 /*!40000 ALTER TABLE `locations` DISABLE KEYS */;
-INSERT INTO `locations` VALUES (1,'Room','room.jpg'),(2,'Tavern','tavern.jpeg'),(3,'Forest','foret.jpeg'),(4,'Swamp','swamp.jpg');
+INSERT INTO `locations` VALUES (1,'Room','room.jpg'),(2,'Tavern','tavern.jpeg'),(3,'Forest','forest.jpeg'),(4,'Swamp','swamp.jpg');
 /*!40000 ALTER TABLE `locations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
