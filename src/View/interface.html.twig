@@ -6,15 +6,15 @@
 
 
     <!-- body -->
-{% block background %}
-    {% if path[1]=='fight' and path[2]==1 %}
-        <img class="picture" src="/assets/images/foret.jpg" alt=" ">
-    {% elseif path[1]=='fight' and path[2]==2 %}
-        <img class="picture" src="/assets/images/swamp.jpg" alt=" ">
-    {% else %}
-        <img class="picture" src="/assets/images/{{picture}}" alt=" ">
-    {% endif %}
-{% endblock background %}
+    {% block background %}
+        {% if path[1]=='fight' and path[2]==1 %}
+            <img class="picture" src="/assets/images/foret.jpg" alt=" ">
+        {% elseif path[1]=='fight' and path[2]==2 %}
+            <img class="picture" src="/assets/images/swamp.jpg" alt=" ">
+        {% else %}
+            <img class="picture" src="/assets/images/{{picture}}" alt=" ">
+        {% endif %}
+    {% endblock background %}
 
 
     <div class="content">
@@ -23,11 +23,11 @@
                 {% if path[3] == hero.id %}
                     <img src="/assets/images/{{ hero.name | lower }}.png" alt="avatar" class="navAvatar">
                     <ul class="stats">
-                <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
-                <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
-                <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
-            </ul>
-            {% endif %}
+                        <li><img src="/assets/images/life.png" alt="" class="logoStats"> Health: {{hero.health}}</li>
+                        <li><img src="/assets/images/sword.png" alt="" class="logoStats"> Attack: {{hero.attack}}</li>
+                        <li><img src="/assets/images/gold.png" alt="" class="logoStats"> Gold: {{hero.gold}}</li>
+                    </ul>
+                {% endif %}
             {% endfor %}
 
             <!---  bagScript --->
@@ -42,9 +42,9 @@
                                 {% for weapon in weapons %}
                                     {% if weapon.name is null %}
                                     {% else %}
-                                    <li>
-                                        <button>{{weapon.name}}</button>
-                                    </li>
+                                        <li>
+                                            <button class="inventoryBtn-{{ hero.name }}">{{weapon.name}}</button>
+                                        </li>
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
@@ -55,9 +55,9 @@
                                 {% for potion in potions %}
                                     {% if potion.name is null %}
                                     {% else %}
-                                    <li>
-                                        <button onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
-                                    </li>
+                                        <li>
+                                            <button class="inventoryBtn-{{ hero.name }}" onclick="if(confirm('Utiliser cette potion ?')){location.href='/quest/usepotion/{{ hero.id }}'}" type="submit" name="{{potion.name}}">{{potion.name}}</button>
+                                        </li>
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
@@ -84,14 +84,18 @@
             <img src="/assets/images/bag.jpg" alt="bagIcon" id="bagIcon">
             <h4>
                 {% if path[1]=='fight' and path[2]==1 %}
-                Forest
+                    Forest
                 {% elseif path[1]=='fight' and path[2]==2 %}
-                Swamp
+                    Swamp
                 {% else %}
-                {{ locations }}
+                    {{ locations }}
                 {% endif %}
             </h4>
-                <button class="restartGame" onclick="window.location.href = '/';"><p class="reset">Restart</p></button>
+            {% for hero in heroes %}
+                {% if path[3] == hero.id %}
+                    <button id="restartButton" class="restartGame-{{ hero.name }}" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
+                {% endif %}
+            {% endfor %}
         </div>
 
         <main id="main">
@@ -106,5 +110,6 @@
     <!-- /body -->
     <script src="/assets/JS/combatScript.js"></script>
     <script src="/assets/JS/itemsManagement.js"></script>
+    <script src="/assets/JS/butonColorScript.js"></script>
 
 {% endblock %}
