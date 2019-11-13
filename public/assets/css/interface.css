@@ -132,7 +132,7 @@ nav {
 .location{
     grid-area: location;
     background-color: rgba(0, 0, 0, 0.5);
-    text-align: right;
+    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -141,7 +141,6 @@ nav {
 }
 
 .location h4{
-    margin-right: 50%;
     color: #FFFFFF;
     width: 90%;
     margin-top: 0.5%;
@@ -170,7 +169,6 @@ main{
     font-family: 'Revalia', cursive;
     color: #FFFFFF;
     height: 30px;
-    margin: 5px 3%;
     padding: 0.2em;
 }
 
