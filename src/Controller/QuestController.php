@@ -48,8 +48,8 @@ class QuestController extends AbstractController
 
 
         //display locations
-        $locationId = $story['locations_id'];
         $locationsManager = new LocationManager();
+        $locationId = $story['locations_id'];
         $location = $locationsManager->selectOneById($locationId);
         return $this->twig->render('Story/story.html.twig', [
             'potions' => $potions,
