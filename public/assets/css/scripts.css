@@ -43,3 +43,16 @@ main.script{
 #warrior-btn.displayWarrior, #mage-btn.displayMage, #rogue-btn.displayRogue{
     display: block;
 }
+
+/*----- Color button ------------------------------------*/
+.response-mage.color, .restartGame-mage.color, .inventoryBtn-mage.color{
+    background: radial-gradient(70% 70% at 50% 50%, rgba(0, 163, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.response-warrior.color, .restartGame-warrior.color, .inventoryBtn-warrior.color{
+    background:radial-gradient(70.63% 70.63% at 50% 50%, rgba(166, 166, 166, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.response-rogue.color, .restartGame-rogue.color, .inventoryBtn-rogue.color{
+    background:radial-gradient(90.63% 90.63% at 50% 50%, rgba(255, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 81.77%);
+}
