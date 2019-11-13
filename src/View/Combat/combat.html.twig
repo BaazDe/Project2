@@ -1,10 +1,5 @@
 {% extends 'interface.html.twig' %}
  {% block stylesheet %}
-     {% for hero in heroes %}
-         {% if path[3] == hero.id %}
-             <link rel="stylesheet" href="/assets/css/interface.css">
-         {% endif %}
-     {% endfor %}
      <link rel="stylesheet" href="/assets/css/combat.css">
      <link rel="stylesheet" href="/assets/css/scripts.css">
 
@@ -110,4 +105,6 @@
 
 
     <script src="../assets/JS/combatScript.js"></script>
+    <script src="/assets/JS/itemsManagement.js"></script>
+
 {% endblock main %}
