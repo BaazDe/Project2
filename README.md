@@ -1,3 +1,4 @@
+# Epic Wild Quest
 
 ## Steps
 
@@ -10,26 +11,41 @@ define('APP_DB_NAME', 'your_db_name');
 define('APP_DB_USER', 'your_db_user_wich_is_not_root');
 define('APP_DB_PWD', 'your_db_password');
 ```
-4. Import `simple-mvc.sql` in your SQL server,
+4. Import all sql files from database/DumpSQL into your database.
 5. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
 6. Go to `localhost:8000` with your favorite browser.
-7. From this starter kit, create your own web application.
 
-### Windows Users
+## Contributors
 
-If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
+👤 **Nathan Vanpeene**
 
-`git config --global core.autocrlf true`
+- Github: [@Mistery7K](https://github.com/Mistery7K)
 
-## URLs availables
+👤 **Sophie Fonteneau**
 
-* Home page at [localhost:8000/](localhost:8000/)
-* Items list at [localhost:8000/item/index](localhost:8000/item/index)
-* Item details [localhost:8000/item/index/show/:id](localhost:8000/item/show/2)
-* Item edit [localhost:8000/item/index/edit/:id](localhost:8000/item/edit/2)
-* Item add [localhost:8000/item/index/add](localhost:8000/item/add)
-* Item deletion [localhost:8000/item/index/delete/:id](localhost:8000/item/delete/2)
+- Github: [@sophie166](https://github.com/sophie166)
 
-## How does URL routing work ?
+👤 **Orianne Tanguy**
 
-![Simple MVC.png](https://raw.githubusercontent.com/WildCodeSchool/simple-mvc/master/Simple%20-%20MVC.png)
+- Github: [@Orianne0605](https://github.com/Orianne0605)
+
+👤 **Najat Ciesielczyk**
+
+- Github: [@choco1](https://github.com/choco1)
+
+👤 **Najat Ciesielczyk**
+
+- Github: [@choco1](https://github.com/choco1)
+
+👤 **Valentin Desneaux**
+
+- Github: [@BaazDe](https://github.com/BaazDe)
+
+### Special contributor and thanking:
+
+👤 **Benjamin Beugnet**
+
+- Github: [@benj-san](https://github.com/benj-san)
+
+
+
