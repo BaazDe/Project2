@@ -9,7 +9,7 @@ main.script{
     background: rgba(0, 0, 0, 0.5);
 }
 
-#history.script, #responses.script, #enigma.script{
+#history.script, #responses.script, #enigma.script, #combat.script{
     filter: blur(5px);
     transition-duration: 1s;
 }

@@ -15,7 +15,7 @@ button:hover{
 }
 
 
-.combat{
+#combat{
     width: 50%;
     margin: auto;
     background: rgba(0, 0, 0, 0.51);
@@ -24,7 +24,7 @@ button:hover{
     min-height: 40%;
 }
 
-.combat h5{
+#combat h5{
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
@@ -188,12 +188,12 @@ progress{
     .menuTop{
         width: 100vw;
     }
-    .combat{
+    #combat{
         width: 100vw;
         background: transparent;
 
     }
-    .combat h5{
+    #combat h5{
         height: 2em;
     }
 

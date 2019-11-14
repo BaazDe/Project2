@@ -5,6 +5,7 @@ const history = document.getElementById("history");
 const responses = document.getElementById("responses");
 const enigma = document.getElementById("enigma");
 const displayBag = document.getElementById("bagScript");
+const combat = document.getElementById("combat");
 
 if (history !== null) {
     bagIcon.addEventListener("click", bagScript);
@@ -23,6 +24,16 @@ if (enigma !==null) {
     {
         displayBag.classList.toggle("script");
         enigma.classList.toggle("script");
+        main.classList.toggle("script");
+    }
+}
+
+if (combat !==null) {
+    bagIcon.addEventListener("click", bagScriptCombat);
+    function bagScriptCombat()
+    {
+        displayBag.classList.toggle("script");
+        combat.classList.toggle("script");
         main.classList.toggle("script");
     }
 }
