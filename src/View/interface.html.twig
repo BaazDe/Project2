@@ -93,7 +93,7 @@
             </h4>
             {% for hero in heroes %}
                 {% if path[3] == hero.id %}
-                    <button id="restartButton" class="restartGame-{{ hero.name }}" onclick="window.location.href = 'http://localhost:8000/';"><p class="reset">Restart</p></button>
+                    <button id="restartButton" class="restartGame-{{ hero.name }}" onclick="window.location.href = '/';"><p class="reset">Restart</p></button>
                 {% endif %}
             {% endfor %}
         </div>
